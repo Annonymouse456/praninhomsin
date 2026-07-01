@@ -17,13 +17,13 @@
 <meta property="og:site_name" content="ปลานิลหอมสิน" />
 <meta property="og:title" content="ปลานิลหอมสิน · สดจากบ่อ ส่งตรงถึงครัว" />
 <meta property="og:description" content="ปลานิลสดจากบ่อ พร้อมเมนูแปรรูป ปลาเผา ปลาทอด ปลาราดพริก ส่งถึงบ้านหรือรับที่ฟาร์ม" />
-<meta property="og:image" content="https://ใส่ลิงก์รูปปกร้าน/og-cover.jpg" />
+<meta property="og:image" content="https://annonymouse456.github.io/praninhomsin/images/og-cover.jpg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="ปลานิลหอมสิน · สดจากบ่อ ส่งตรงถึงครัว" />
 <meta name="twitter:description" content="ปลานิลสดจากบ่อ พร้อมเมนูแปรรูป ส่งถึงบ้านหรือรับที่ฟาร์ม" />
-<meta name="twitter:image" content="https://ใส่ลิงก์รูปปกร้าน/og-cover.jpg" />
+<meta name="twitter:image" content="https://annonymouse456.github.io/praninhomsin/images/og-cover.jpg" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -793,7 +793,7 @@ const CONFIG = {
   promptpayName: "",                        // ชื่อบัญชีพร้อมเพย์ เช่น "นายสมชาย ใจดี"
   payNote:       "โอนแล้วส่งสลิปยืนยันในแชต LINE ได้เลย",
 
-  siteUrl:    "",                           // ลิงก์เว็บจริงตอนอัปโหลดออนไลน์ (ใช้ทำ SEO/แชร์) เช่น "https://myfarm.com/"
+  siteUrl:    "https://annonymouse456.github.io/praninhomsin/", // ลิงก์เว็บจริง (ใช้ทำ SEO/แชร์)
 
   minOrder:   200,                          // ยอดขั้นต่ำสำหรับจัดส่ง
   freeDeliveryOver: 500,                    // ยอดที่ส่งฟรีในโซนใกล้ (freeEligible)
@@ -828,14 +828,14 @@ const CONFIG = {
 const MENU = [
   // ตัวอย่างใส่รูปจริง (แกะคอมเมนต์แล้วชี้ไปที่ไฟล์รูปของคุณ):
   // { id:"f0", category:"fresh", type:"fresh", emoji:"🐟", img:"images/pla-phao.jpg", name:"ปลานิลเผา", desc:"...", price:160, unit:"ตัว", badge:"" },
-  { id:"f1", category:"fresh", type:"fresh", emoji:"🐟", name:"ปลานิลสดทั้งตัว", desc:"ขอดเกล็ด ควักไส้ ทำสะอาด พร้อมปรุง", price:85,  unit:"กก.", badge:"ขายดี" },
-  { id:"f2", category:"fresh", type:"fresh", emoji:"🍤", name:"ปลานิลบั้งพร้อมทอด", desc:"กรีดข้างตัว (บั้ง) มาให้เรียบร้อย ลงกระทะทอดได้เลย ไม่ต้องเตรียมเอง", price:95,  unit:"กก.", badge:"สะดวก" },
+  { id:"f1", category:"fresh", type:"fresh", emoji:"🐟", img:"images/pla-sod.jpg", name:"ปลานิลสดทั้งตัว", desc:"ขอดเกล็ด ควักไส้ ทำสะอาด พร้อมปรุง", price:85,  unit:"กก.", badge:"ขายดี" },
+  { id:"f2", category:"fresh", type:"fresh", emoji:"🍤", img:"images/pla-bung.jpg", name:"ปลานิลบั้งพร้อมทอด", desc:"กรีดข้างตัว (บั้ง) มาให้เรียบร้อย ลงกระทะทอดได้เลย ไม่ต้องเตรียมเอง", price:95,  unit:"กก.", badge:"สะดวก" },
   { id:"f3", category:"fresh", type:"fresh", emoji:"🍣", name:"เนื้อปลานิลแล่ (เลาะก้างใหญ่ออก)", desc:"แล่เป็นชิ้น เลาะก้างออกให้แล้ว ทำเมนูอะไรก็สะดวก", price:150, unit:"แพ็ก 500ก.", badge:"" },
   { id:"f4", category:"fresh", type:"fresh", emoji:"🌤️", name:"ปลานิลแดดเดียว", desc:"หมักสูตรเด็ด ตากแดดเดียว ทอดหอมกรอบ", price:180, unit:"แพ็ก 2 ตัว", badge:"" },
 
-  { id:"c1", category:"cook", type:"cook", emoji:"🔥", name:"ปลานิลเผาเกลือ", desc:"เตาถ่านแท้ พอกเกลือ หอม เนื้อฉ่ำ (~800ก.-1กก.)", price:160, unit:"ตัว", badge:"เตาถ่าน" },
-  { id:"c2", category:"cook", type:"cook", emoji:"🍳", name:"ปลานิลทอดน้ำปลา", desc:"ทอดกรอบนอกนุ่มใน ราดน้ำปลาหวาน", price:150, unit:"ตัว", badge:"" },
-  { id:"c3", category:"cook", type:"cook", emoji:"🌶️", name:"ปลานิลราดพริกสามรส", desc:"ทอดกรอบราดซอสสามรส เปรี้ยว หวาน เผ็ด", price:220, unit:"ตัว", badge:"รสเด็ด" },
+  { id:"c1", category:"cook", type:"cook", emoji:"🔥", img:"images/pla-phao.jpg", name:"ปลานิลเผาเกลือ", desc:"เตาถ่านแท้ พอกเกลือ หอม เนื้อฉ่ำ (~800ก.-1กก.)", price:160, unit:"ตัว", badge:"เตาถ่าน" },
+  { id:"c2", category:"cook", type:"cook", emoji:"🍳", img:"images/pla-thod.jpg", name:"ปลานิลทอดน้ำปลา", desc:"ทอดกรอบนอกนุ่มใน ราดน้ำปลาหวาน", price:150, unit:"ตัว", badge:"" },
+  { id:"c3", category:"cook", type:"cook", emoji:"🌶️", img:"images/pla-radprik.jpg", name:"ปลานิลราดพริกสามรส", desc:"ทอดกรอบราดซอสสามรส เปรี้ยว หวาน เผ็ด", price:220, unit:"ตัว", badge:"รสเด็ด" },
   { id:"c4", category:"cook", type:"cook", emoji:"🧄", name:"ปลานิลทอดกระเทียม", desc:"ทอดกระเทียมพริกไทยหอมๆ กินกับข้าวสวย", price:160, unit:"ตัว", badge:"" },
   { id:"c5", category:"cook", type:"cook", emoji:"🍲", name:"ฉู่ฉี่ปลานิล", desc:"ราดพริกแกงฉู่ฉี่เข้มข้น หอมกะทิ", price:180, unit:"ถุง", badge:"" },
   { id:"c6", category:"cook", type:"cook", emoji:"🥘", name:"ต้มยำปลานิลน้ำข้น", desc:"แซ่บร้อนๆ สมุนไพรเต็มหม้อ", price:160, unit:"ถุง", badge:"" },
