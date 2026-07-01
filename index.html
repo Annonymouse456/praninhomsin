@@ -1,0 +1,1379 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ปลานิลหอมสิน · สดจากบ่อ ส่งตรงถึงครัว</title>
+<meta name="description" content="ปลานิลสดจากบ่อ พร้อมเมนูแปรรูป ปลาเผา ปลาทอด ปลาราดพริก บั้งพร้อมทอด บริการส่งถึงบ้านและรับเองที่ฟาร์ม เลือกพื้นที่เพื่อดูค่าส่งและระยะเวลาได้ทันที" />
+
+<!-- ไอคอนแท็บ (favicon) — ใช้โลโก้ปลาในตัว ไม่ต้องมีไฟล์เพิ่ม -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%231f7a5a'/%3E%3Cpath d='M14 34c8-11 22-14 30-8 3 2 6 5 6 5s-3 3-6 5c-8 6-22 3-30-7z' fill='%23fbf6ec'/%3E%3Cpath d='M50 26l8-6-2 11 2 11-8-6z' fill='%23f2b705'/%3E%3Ccircle cx='24' cy='30' r='2.6' fill='%2322312c'/%3E%3C/svg%3E" />
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%231f7a5a'/%3E%3Cpath d='M14 34c8-11 22-14 30-8 3 2 6 5 6 5s-3 3-6 5c-8 6-22 3-30-7z' fill='%23fbf6ec'/%3E%3Cpath d='M50 26l8-6-2 11 2 11-8-6z' fill='%23f2b705'/%3E%3Ccircle cx='24' cy='30' r='2.6' fill='%2322312c'/%3E%3C/svg%3E" />
+<meta name="theme-color" content="#1f7a5a" />
+
+<!-- การ์ดพรีวิวตอนแชร์ลิงก์ใน LINE/Facebook — แก้ 2 URL ด้านล่างให้เป็นของร้านจริง (รูปแนวนอน 1200x630 .jpg ที่อัปโหลดออนไลน์แล้ว) -->
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="th_TH" />
+<meta property="og:site_name" content="ปลานิลหอมสิน" />
+<meta property="og:title" content="ปลานิลหอมสิน · สดจากบ่อ ส่งตรงถึงครัว" />
+<meta property="og:description" content="ปลานิลสดจากบ่อ พร้อมเมนูแปรรูป ปลาเผา ปลาทอด ปลาราดพริก ส่งถึงบ้านหรือรับที่ฟาร์ม" />
+<meta property="og:image" content="https://ใส่ลิงก์รูปปกร้าน/og-cover.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="ปลานิลหอมสิน · สดจากบ่อ ส่งตรงถึงครัว" />
+<meta name="twitter:description" content="ปลานิลสดจากบ่อ พร้อมเมนูแปรรูป ส่งถึงบ้านหรือรับที่ฟาร์ม" />
+<meta name="twitter:image" content="https://ใส่ลิงก์รูปปกร้าน/og-cover.jpg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@500;600;700&family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   ปลานิลหอมสิน — ร้านขายปลานิลสด + แปรรูป (ไฟล์เดียวจบ)
+   แก้ข้อมูลร้านได้ที่ตัวแปร CONFIG ในส่วน <script> ด้านล่างสุด
+   ============================================================ */
+:root{
+  --green:#1f7a5a;         /* เขียวบ่อน้ำ/สมุนไพร */
+  --green-d:#155c43;
+  --green-l:#e7f3ee;
+  --fire:#c85018;          /* ส้มเตาถ่าน (เข้มพอให้ตัวอักษรขาวอ่านชัด) */
+  --chili:#d33b2c;         /* แดงพริก */
+  --gold:#f2b705;
+  --cream:#fbf6ec;
+  --paper:#ffffff;
+  --ink:#22312c;
+  --muted:#5c6b64;         /* เทาอมเขียว อ่านชัดผ่านมาตรฐาน contrast */
+  --line:#e8e2d5;
+  --shadow:0 12px 34px rgba(23,60,45,.12);
+  --shadow-sm:0 4px 14px rgba(23,60,45,.10);
+  --radius:18px;
+  --radius-sm:12px;
+  --container:1160px;
+  --header-h:70px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;font-family:'Prompt',system-ui,-apple-system,'Segoe UI',sans-serif;
+  color:var(--ink);background:var(--cream);line-height:1.6;-webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{font-family:'Kanit',sans-serif;font-weight:600;line-height:1.25;margin:0}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+button{font-family:inherit;cursor:pointer}
+/* โฟกัสที่มองเห็นได้ชัดสำหรับคนใช้คีย์บอร์ด */
+:focus-visible{outline:2.5px solid var(--green-d);outline-offset:2px;border-radius:6px}
+.container{max-width:var(--container);margin:0 auto;padding:0 20px}
+.section{padding:66px 0}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-weight:600;color:var(--green);
+  background:var(--green-l);padding:6px 14px;border-radius:999px;font-size:.86rem}
+.sec-title{font-size:clamp(1.6rem,3.4vw,2.35rem);margin:14px 0 6px}
+.sec-sub{color:var(--muted);max-width:640px;margin:0 auto}
+.center{text-align:center}
+
+/* ---------- Buttons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:none;
+  border-radius:999px;padding:12px 22px;font-weight:600;font-size:.98rem;transition:.18s;
+  background:var(--green);color:#fff;box-shadow:var(--shadow-sm)}
+.btn:hover{transform:translateY(-2px);background:var(--green-d)}
+.btn:active{transform:translateY(0)}
+.btn-fire{background:linear-gradient(135deg,var(--fire),var(--chili))}
+.btn-fire:hover{filter:brightness(1.05);background:linear-gradient(135deg,var(--fire),var(--chili))}
+.btn-ghost{background:#fff;color:var(--green-d);border:1.5px solid var(--line)}
+.btn-ghost:hover{background:#fff;border-color:var(--green);color:var(--green-d)}
+.btn-line{background:#067a35;color:#fff}
+.btn-line:hover{background:#05672c}
+.btn-sm{padding:9px 16px;font-size:.9rem}
+.btn-block{width:100%}
+.btn[disabled]{opacity:.5;cursor:not-allowed;transform:none;filter:none}
+
+/* ---------- Header ---------- */
+.header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{height:var(--header-h);display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;font-family:'Kanit';font-weight:700;font-size:1.18rem;color:var(--green-d)}
+.brand .logo{width:40px;height:40px;flex:0 0 auto}
+.nav-links{display:flex;gap:26px;align-items:center}
+.nav-links a{font-weight:500;color:var(--ink);font-size:.97rem;position:relative}
+.nav-links a:hover{color:var(--green)}
+.nav-right{display:flex;gap:10px;align-items:center}
+.cart-btn{position:relative;display:inline-flex;align-items:center;gap:8px;background:var(--green);
+  color:#fff;border:none;border-radius:999px;padding:10px 18px;font-weight:600;box-shadow:var(--shadow-sm)}
+.cart-btn:hover{background:var(--green-d)}
+.cart-count{position:absolute;top:-7px;right:-7px;min-width:22px;height:22px;padding:0 5px;
+  background:var(--chili);color:#fff;border-radius:999px;font-size:.76rem;font-weight:700;
+  display:flex;align-items:center;justify-content:center;border:2px solid #fff}
+.menu-toggle{display:none;width:44px;height:44px;align-items:center;justify-content:center;
+  background:none;border:none;font-size:1.5rem;color:var(--green-d)}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;overflow:hidden;
+  background:radial-gradient(1100px 500px at 80% -10%,#dff0e8 0,transparent 60%),
+             radial-gradient(900px 500px at 0% 110%,#fbe6d7 0,transparent 55%),var(--cream)}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;
+  padding:56px 0 64px}
+.hero h1{font-size:clamp(2.1rem,5vw,3.35rem);letter-spacing:-.5px}
+.hero h1 .hl{color:var(--fire)}
+.hero p.lead{font-size:1.1rem;color:#455650;max-width:520px;margin:16px 0 26px}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap}
+.hero-trust{display:flex;gap:22px;flex-wrap:wrap;margin-top:26px}
+.trust{display:flex;align-items:center;gap:9px;font-weight:500;font-size:.95rem;color:#3c4c46}
+.trust .ic{width:34px;height:34px;border-radius:10px;background:var(--green-l);color:var(--green);
+  display:flex;align-items:center;justify-content:center;font-size:1.05rem;flex:0 0 auto}
+.hero-art{position:relative;display:flex;justify-content:center}
+.hero-card{background:#fff;border-radius:26px;box-shadow:var(--shadow);padding:22px;width:100%;
+  max-width:430px;position:relative}
+.hero-pond{background:linear-gradient(160deg,#2ba077,#12694a);border-radius:20px;height:260px;
+  position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.hero-pond svg{width:78%;filter:drop-shadow(0 10px 18px rgba(0,0,0,.25))}
+.floating-price{position:absolute;right:-10px;top:18px;background:#fff;border-radius:14px;
+  box-shadow:var(--shadow);padding:10px 14px;text-align:center}
+.floating-price .n{font-family:'Kanit';font-weight:700;color:var(--fire);font-size:1.15rem}
+.floating-price .l{font-size:.72rem;color:var(--muted)}
+.hero-tags{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
+.hero-tags span{background:var(--green-l);color:var(--green-d);font-weight:600;font-size:.82rem;
+  padding:6px 12px;border-radius:999px}
+
+/* ลดช่องว่างระหว่าง hero กับ section แรก */
+.hero + .section{padding-top:34px}
+
+/* ---------- Feature strip ---------- */
+.features{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.feature{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px;
+  box-shadow:var(--shadow-sm);transition:.18s}
+.feature:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.feature .fi{font-size:1.8rem;margin-bottom:8px}
+.feature h3{font-size:1.05rem;margin-bottom:4px}
+.feature p{margin:0;color:var(--muted);font-size:.92rem}
+
+/* ---------- Menu ---------- */
+.menu-sec{background:var(--paper)}
+.tabs{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:26px 0 30px}
+.tab{background:#fff;border:1.5px solid var(--line);color:var(--ink);border-radius:999px;
+  padding:9px 18px;font-weight:600;font-size:.93rem;transition:.16s}
+.tab:hover{border-color:var(--green)}
+.tab.active{background:var(--green);color:#fff;border-color:var(--green)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
+  box-shadow:var(--shadow-sm);display:flex;flex-direction:column;transition:.18s}
+.card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.card-media{height:172px;position:relative;display:flex;align-items:center;justify-content:center;
+  background-image:var(--img,none),linear-gradient(150deg,#dceee5,#f5e8d8);background-size:cover;
+  background-position:center;background-repeat:no-repeat}
+.card-emoji{font-size:4.2rem;filter:drop-shadow(0 6px 10px rgba(0,0,0,.15))}
+.card-media[style*="--img"] .card-emoji{display:none}
+.badge{position:absolute;top:12px;left:12px;background:var(--chili);color:#fff;font-weight:700;
+  font-size:.76rem;padding:5px 11px;border-radius:999px;box-shadow:var(--shadow-sm)}
+.card-body{padding:16px 17px 18px;display:flex;flex-direction:column;flex:1}
+.card-body h3{font-size:1.08rem}
+.card-desc{color:var(--muted);font-size:.9rem;margin:6px 0 10px;flex:1}
+.card-tags{margin-bottom:12px}
+.tag{font-size:.78rem;font-weight:600;padding:4px 10px;border-radius:999px}
+.tag-hot{background:#fdeadf;color:#b5471f}
+.tag-cool{background:#e2f0fb;color:#1f5f92}
+.card-foot{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.price{font-family:'Kanit';font-weight:700;font-size:1.28rem;color:var(--green-d)}
+.price .unit{font-family:'Prompt';font-weight:400;font-size:.82rem;color:var(--muted)}
+.menu-note{margin-top:26px;text-align:center;color:var(--muted);font-size:.9rem}
+
+/* ---------- Delivery / zones ---------- */
+.deliver-sec{background:linear-gradient(180deg,var(--cream),#f4ede0)}
+.deliver-top{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:34px}
+.mode-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px;
+  box-shadow:var(--shadow-sm);position:relative;overflow:hidden}
+.mode-card .mc-ic{width:54px;height:54px;border-radius:14px;display:flex;align-items:center;
+  justify-content:center;font-size:1.7rem;margin-bottom:12px}
+.mode-card.pickup .mc-ic{background:var(--green-l);color:var(--green)}
+.mode-card.deliver .mc-ic{background:#fbe1d4;color:var(--fire)}
+.mode-card h3{font-size:1.25rem;margin-bottom:6px}
+.mode-card ul{margin:12px 0 0;padding-left:18px;color:#3f4d47}
+.mode-card ul li{margin-bottom:6px}
+
+.zone-wrap{display:grid;grid-template-columns:.95fr 1.05fr;gap:26px;align-items:center;
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow-sm)}
+.zone-map{display:flex;justify-content:center}
+.zone-map svg{width:100%;max-width:340px}
+.zone-check h3{font-size:1.3rem;margin-bottom:4px}
+.zone-check p.hint{color:var(--muted);font-size:.92rem;margin:0 0 16px}
+.field{margin-bottom:14px}
+.field label{display:block;font-weight:600;font-size:.9rem;margin-bottom:6px}
+select,input,textarea{width:100%;border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;
+  font-family:inherit;font-size:.96rem;background:#fff;color:var(--ink);transition:.15s}
+select:focus,input:focus,textarea:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 3px var(--green-l)}
+.zone-actions{display:flex;gap:10px;flex-wrap:wrap}
+.zone-result{margin-top:18px;border-radius:14px;padding:16px 18px;display:none;
+  border:1.5px dashed var(--green);background:var(--green-l)}
+.zone-result.show{display:block;animation:pop .25s ease}
+.zone-result.warn{border-color:var(--fire);background:#fbe6da}
+.zr-head{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.zr-zone{font-family:'Kanit';font-weight:700;font-size:1.15rem;color:var(--green-d)}
+.zr-fee{font-family:'Kanit';font-weight:700;font-size:1.35rem;color:var(--fire)}
+.zr-meta{display:flex;gap:18px;flex-wrap:wrap;margin-top:10px;color:#3f4d47;font-size:.92rem}
+.zr-meta b{color:var(--ink)}
+@keyframes pop{from{transform:scale(.97);opacity:0}to{transform:scale(1);opacity:1}}
+
+/* ---------- Steps ---------- */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.step{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px 20px;
+  box-shadow:var(--shadow-sm);position:relative}
+.step .num{width:42px;height:42px;border-radius:12px;background:var(--green);color:#fff;
+  font-family:'Kanit';font-weight:700;font-size:1.2rem;display:flex;align-items:center;justify-content:center;margin-bottom:12px}
+.step h3{font-size:1.05rem;margin-bottom:5px}
+.step p{margin:0;color:var(--muted);font-size:.92rem}
+
+/* ---------- Testimonials ---------- */
+.testi-sec{background:var(--green-d);color:#fff}
+.testi-sec .sec-title{color:#fff}
+.testi-sec .sec-sub{color:#cfe7dd}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:34px}
+.testi{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:var(--radius);
+  padding:22px;backdrop-filter:blur(4px);text-align:left}
+.testi .stars{color:var(--gold);margin-bottom:8px;letter-spacing:2px}
+.testi p{margin:0 0 14px;font-size:.96rem;color:#eaf5f0}
+.testi .who{display:flex;align-items:center;gap:10px}
+.testi .av{width:40px;height:40px;border-radius:50%;background:var(--gold);color:var(--green-d);
+  font-family:'Kanit';font-weight:700;display:flex;align-items:center;justify-content:center}
+.testi .who b{display:block;font-size:.95rem}
+.testi .who span{font-size:.82rem;color:#bcdccf}
+
+/* ---------- FAQ ---------- */
+.faq-list{max-width:800px;margin:30px auto 0;display:flex;flex-direction:column;gap:12px}
+.faq{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.faq summary{list-style:none;cursor:pointer;padding:17px 20px;font-weight:600;display:flex;
+  align-items:center;justify-content:space-between;gap:12px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary .chev{transition:.2s;color:var(--green);font-size:1.2rem}
+.faq[open] summary .chev{transform:rotate(180deg)}
+.faq .ans{padding:0 20px 18px;color:var(--muted)}
+
+/* ---------- Contact ---------- */
+.contact-sec{background:var(--paper)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.contact-card{background:var(--cream);border:1px solid var(--line);border-radius:var(--radius);padding:28px}
+.contact-list{list-style:none;margin:0;padding:0}
+.contact-list li{display:flex;gap:14px;padding:12px 0;border-bottom:1px dashed var(--line)}
+.contact-list li:last-child{border-bottom:none}
+.contact-list .ci{width:42px;height:42px;border-radius:12px;background:var(--green-l);color:var(--green);
+  display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex:0 0 auto}
+.contact-list .cl{font-size:.82rem;color:var(--muted)}
+.contact-list .cv{font-weight:600}
+.contact-cta{display:flex;flex-direction:column;justify-content:center;gap:14px;
+  background:linear-gradient(150deg,var(--green),var(--green-d));border-radius:var(--radius);
+  padding:32px;color:#fff;text-align:center}
+.contact-cta h3{color:#fff;font-size:1.5rem}
+.contact-cta p{color:#d5ede2;margin:6px 0 6px}
+
+/* ---------- Footer ---------- */
+.footer{background:#16221d;color:#c3d2cb;padding:40px 0 28px}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:26px}
+.footer .brand{color:#fff}
+.footer h4{color:#fff;font-size:1rem;margin-bottom:12px}
+.footer a{display:block;color:#c3d2cb;padding:4px 0;font-size:.93rem}
+.footer a:hover{color:#fff}
+.footer .copy{margin-top:26px;padding-top:18px;border-top:1px solid #2a3a33;font-size:.85rem;color:#9fb2aa;text-align:center}
+
+/* ---------- Cart drawer ---------- */
+.overlay{position:fixed;inset:0;background:rgba(20,30,26,.5);opacity:0;visibility:hidden;
+  transition:.25s;z-index:80}
+.overlay.show{opacity:1;visibility:visible}
+.drawer{position:fixed;top:0;right:0;height:100%;width:420px;max-width:92vw;background:#fff;z-index:90;
+  transform:translateX(100%);transition:transform .28s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;box-shadow:-10px 0 40px rgba(0,0,0,.18)}
+.drawer.show{transform:translateX(0)}
+.drawer-head{padding:20px 22px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between}
+.drawer-head h3{font-size:1.25rem}
+.drawer-close{background:none;border:none;font-size:1.6rem;color:var(--muted);line-height:1;
+  width:44px;height:44px;display:flex;align-items:center;justify-content:center;margin:-6px -8px -6px 0}
+.drawer-body{flex:1;overflow-y:auto;padding:18px 22px}
+.cart-empty{text-align:center;color:var(--muted);padding:50px 10px}
+.cart-empty .em{font-size:3rem;margin-bottom:10px}
+.citem{display:flex;gap:12px;padding:14px 0;border-bottom:1px dashed var(--line)}
+.citem-media{width:60px;height:60px;border-radius:12px;background:linear-gradient(150deg,#dceee5,#f5e8d8);
+  display:flex;align-items:center;justify-content:center;font-size:1.9rem;flex:0 0 auto}
+.citem-info{flex:1;min-width:0}
+.citem-info h4{font-size:.98rem;margin:0 0 2px}
+.citem-info .cu{color:var(--muted);font-size:.82rem}
+.citem-bottom{display:flex;align-items:center;justify-content:space-between;margin-top:8px}
+.qty{display:flex;align-items:center;gap:0;border:1.5px solid var(--line);border-radius:999px;overflow:hidden}
+.qty button{width:44px;height:44px;border:none;background:#fff;font-size:1.15rem;color:var(--green-d);font-weight:700}
+.qty button:hover{background:var(--green-l)}
+.qty span{min-width:34px;text-align:center;font-weight:600;font-size:.95rem}
+.citem .lp{font-family:'Kanit';font-weight:700;color:var(--green-d)}
+.kg-note{font-size:.72rem;color:var(--muted);margin-top:2px}
+.remove{background:none;border:none;color:var(--chili);font-size:.82rem;font-weight:600;
+  min-height:40px;padding:6px 4px;display:inline-flex;align-items:center}
+
+.checkout{border-top:1px solid var(--line);padding:16px 22px 20px;background:#fff}
+.seg{display:flex;gap:8px;background:var(--cream);border-radius:12px;padding:5px;margin-bottom:14px}
+.seg button{flex:1;border:none;background:none;padding:11px;border-radius:9px;font-weight:600;color:#586860;font-size:.92rem}
+.seg button.active{background:#fff;color:var(--green-d);box-shadow:var(--shadow-sm)}
+.co-field{margin-bottom:10px}
+.co-field label{display:block;font-size:.82rem;font-weight:600;margin-bottom:4px;color:#3f4d47}
+.fld-hint{display:block;color:var(--muted);font-size:.78rem;margin-top:4px}
+.co-row{display:flex;gap:10px}
+.co-row .co-field{flex:1}
+.summary-line{display:flex;justify-content:space-between;padding:4px 0;font-size:.95rem;color:#3f4d47}
+.summary-line.total{border-top:1px dashed var(--line);margin-top:8px;padding-top:10px;
+  font-family:'Kanit';font-weight:700;font-size:1.2rem;color:var(--ink)}
+.summary-line.total .amt{color:var(--fire)}
+.kg-disclaimer{font-size:.78rem;color:var(--muted);margin:2px 0 0}
+.note-box{border-radius:10px;padding:9px 12px;font-size:.86rem;font-weight:600;margin:10px 0;display:none}
+.note-box.show{display:block}
+.warn-min{background:#fbe6da;color:#a5401a}
+.free-prog{background:#e6f6ea;color:#1c7a44}
+.pay-info{background:#eef6ff;color:#1f4f7a;border-radius:10px;padding:9px 12px;font-size:.86rem;margin:10px 0;display:none}
+.co-hint{background:#fff6e5;color:#8a5a12;border-radius:10px;padding:9px 12px;font-size:.82rem;margin:10px 0;display:none}
+.order-trust{font-size:.78rem;color:var(--muted);text-align:center;margin:10px 0 0}
+.checkout-actions{display:flex;flex-direction:column;gap:9px;margin-top:12px}
+.checkout-actions .row2{display:flex;gap:9px}
+.checkout-actions .row2 .btn{flex:1}
+
+/* ---------- Mobile cart bar ---------- */
+.mcart{position:fixed;left:0;right:0;bottom:0;z-index:60;background:#fff;border-top:1px solid var(--line);
+  padding:10px 16px;display:none;align-items:center;justify-content:space-between;box-shadow:0 -6px 20px rgba(0,0,0,.08)}
+.mcart .mc-total{font-family:'Kanit';font-weight:700}
+.mcart .mc-total span{display:block;font-family:'Prompt';font-weight:400;font-size:.75rem;color:var(--muted)}
+
+/* ---------- Toast ---------- */
+.toast{position:fixed;left:50%;bottom:30px;transform:translateX(-50%) translateY(20px);
+  background:var(--ink);color:#fff;padding:13px 22px;border-radius:999px;font-weight:600;font-size:.94rem;
+  box-shadow:var(--shadow);opacity:0;visibility:hidden;transition:.25s;z-index:120;max-width:90vw;text-align:center}
+.toast.show{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+
+/* ---------- Setup banner (เตือนแก้ CONFIG ก่อนเผยแพร่) ---------- */
+.setup-banner{position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#b91c1c;color:#fff;
+  font-size:.82rem;padding:10px 14px;text-align:center;cursor:pointer;box-shadow:0 -4px 14px rgba(0,0,0,.2)}
+.setup-banner b{text-decoration:underline}
+
+/* ---------- Responsive ---------- */
+@media(max-width:960px){
+  .hero-grid{grid-template-columns:1fr;gap:26px}
+  .features{grid-template-columns:repeat(2,1fr)}
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .deliver-top{grid-template-columns:1fr}
+  .zone-wrap{grid-template-columns:1fr}
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .testi-grid{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+/* เมนูแฮมเบอร์เกอร์ครอบคลุมช่วงแท็บเล็ตเล็กด้วย (กันลิงก์อัดกันช่วง ~700px) */
+@media(max-width:860px){
+  .nav-links{display:none}
+  .menu-toggle{display:flex}
+  .nav-links.open{display:flex;position:absolute;top:var(--header-h);left:0;right:0;background:#fff;
+    flex-direction:column;padding:16px 20px;gap:14px;border-bottom:1px solid var(--line);box-shadow:var(--shadow)}
+  .cart-btn .cart-label{display:none}
+}
+@media(max-width:640px){
+  .features{grid-template-columns:1fr}
+  .grid{grid-template-columns:1fr 1fr;gap:14px}
+  .card-emoji{font-size:3.2rem}
+  .card-foot{flex-wrap:wrap}
+  .card-foot .btn-add{width:100%}
+  .steps{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .section{padding:48px 0}
+  .hero + .section{padding-top:24px}
+  body.has-mcart .mcart{display:flex}
+  body.has-mcart{padding-bottom:74px}
+}
+@media(max-width:400px){ .grid{grid-template-columns:1fr} }
+</style>
+</head>
+<body>
+
+<!-- ===================== HEADER ===================== -->
+<header class="header">
+  <div class="container nav">
+    <a href="#top" class="brand">
+      <svg class="logo" viewBox="0 0 64 64" aria-hidden="true">
+        <circle cx="32" cy="32" r="32" fill="#1f7a5a"/>
+        <path d="M14 34c8-11 22-14 30-8 3 2 6 5 6 5s-3 3-6 5c-8 6-22 3-30-7z" fill="#fbf6ec"/>
+        <path d="M50 26l8-6-2 11 2 11-8-6z" fill="#f2b705"/>
+        <circle cx="24" cy="30" r="2.6" fill="#22312c"/>
+        <path d="M30 34c4 2 9 2 13 0" stroke="#1f7a5a" stroke-width="2" fill="none" stroke-linecap="round"/>
+      </svg>
+      <span data-config="brand">ปลานิลหอมสิน</span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#menu">เมนู</a>
+      <a href="#deliver">การจัดส่ง</a>
+      <a href="#how">วิธีสั่ง</a>
+      <a href="#faq">คำถามที่พบบ่อย</a>
+      <a href="#contact">ติดต่อ</a>
+    </nav>
+    <div class="nav-right">
+      <button class="cart-btn" id="openCart" aria-label="เปิดตะกร้า" aria-controls="drawer" aria-expanded="false">
+        🛒 <span class="cart-label">ตะกร้า</span>
+        <span class="cart-count" id="cartCount" style="display:none">0</span>
+      </button>
+      <button class="menu-toggle" id="menuToggle" aria-label="เมนู" aria-controls="navLinks" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ===================== HERO ===================== -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-left">
+      <span class="eyebrow">🐟 สดจากบ่อทุกวัน · เลี้ยงเอง ส่งเอง</span>
+      <h1>ปลานิล<span class="hl">สดๆ</span><br>ส่งตรงจากบ่อ<br>ถึงครัวคุณ</h1>
+      <p class="lead">เลือกได้ทั้งปลาสดพร้อมปรุง หรือเมนูปรุงสดร้อนๆ — ปลาเผา ปลาทอด ปลาราดพริก บั้งพร้อมทอด
+        เนื้อแน่น ไม่มีกลิ่นโคลน สั่งง่าย รับเองที่ฟาร์มหรือส่งถึงบ้าน</p>
+      <div class="hero-cta">
+        <a href="#menu" class="btn btn-fire">🍽️ ดูเมนูทั้งหมด</a>
+        <a href="#deliver" class="btn btn-ghost">🚚 เช็กค่าส่งพื้นที่คุณ</a>
+      </div>
+      <div class="hero-trust">
+        <div class="trust"><span class="ic">🌿</span> เลี้ยงในบ่อสะอาด</div>
+        <div class="trust"><span class="ic">🧊</span> จับสดใหม่ทุกออเดอร์</div>
+        <div class="trust"><span class="ic">💸</span> ราคาตรงจากฟาร์ม</div>
+      </div>
+    </div>
+    <div class="hero-art">
+      <div class="hero-card">
+        <div class="hero-pond" id="heroPond">
+          <svg viewBox="0 0 200 120" aria-hidden="true">
+            <path d="M20 62c26-30 78-36 108-18 10 6 22 18 22 18s-12 12-22 18C98 98 46 92 20 62z" fill="#fbf6ec"/>
+            <path d="M150 44l30-20-7 38 7 38-30-20z" fill="#f2b705"/>
+            <path d="M92 46c-6 6-6 26 0 32" stroke="#1f7a5a" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <path d="M108 50c-4 4-4 18 0 22" stroke="#1f7a5a" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <circle cx="58" cy="54" r="5" fill="#22312c"/>
+            <circle cx="60" cy="52" r="1.6" fill="#fff"/>
+            <path d="M76 74c14 8 34 8 50 0" stroke="#1f7a5a" stroke-width="3" fill="none" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="floating-price">
+          <div class="n" data-config="startPrice">฿85</div>
+          <div class="l">/กก. เริ่มต้น</div>
+        </div>
+        <div class="hero-tags">
+          <span>🔥 ปลาเผาเตาถ่าน</span>
+          <span>🍤 บั้งพร้อมทอด</span>
+          <span>🌶️ ราดพริกสามรส</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FEATURES ===================== -->
+<section class="section">
+  <div class="container">
+    <div class="features">
+      <div class="feature"><div class="fi">🎣</div><h3>สดจากบ่อ</h3><p>จับขึ้นมาสดๆ ในวันที่จัดส่ง เนื้อแน่น หวาน ไม่คาว</p></div>
+      <div class="feature"><div class="fi">🔪</div><h3>แปรรูปให้พร้อม</h3><p>ขอด ควักไส้ บั้ง แล่ ทำสะอาด พร้อมลงกระทะทันที</p></div>
+      <div class="feature"><div class="fi">🏍️</div><h3>ส่งถึงบ้าน</h3><p>เลือกพื้นที่ ดูค่าส่งและเวลาได้ทันที หรือรับเองที่ฟาร์มก็ได้</p></div>
+      <div class="feature"><div class="fi">💰</div><h3>ราคายุติธรรม</h3><p>ตัดพ่อค้าคนกลาง ราคาตรงจากคนเลี้ยง คุ้มทั้งคนซื้อคนขาย</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== MENU ===================== -->
+<section class="section menu-sec" id="menu">
+  <div class="container">
+    <div class="center">
+      <span class="eyebrow">🍽️ เมนูของเรา</span>
+      <h2 class="sec-title">เลือกได้ทั้งปลาสด และเมนูพร้อมทาน</h2>
+      <p class="sec-sub">กดใส่ตะกร้าได้เลย ระบบจะช่วยคิดค่าส่งตามพื้นที่ให้อัตโนมัติ</p>
+    </div>
+    <div class="tabs" id="tabs" role="group" aria-label="หมวดเมนู">
+      <button class="tab active" data-cat="all" aria-pressed="true">ทั้งหมด</button>
+      <button class="tab" data-cat="fresh" aria-pressed="false">🧊 ปลาสด · พร้อมปรุง</button>
+      <button class="tab" data-cat="cook" aria-pressed="false">🔥 เมนูปรุงสด</button>
+      <button class="tab" data-cat="set" aria-pressed="false">🎁 เซ็ต · โปรโมชั่น</button>
+    </div>
+    <div class="grid" id="menuGrid"><!-- rendered by JS --></div>
+    <p class="menu-note">🧊 เมนูปลาสด ส่งได้ทุกโซน (แพ็กน้ำแข็งมาให้)<br>🔥 เมนูปรุงสด แนะนำรับที่ฟาร์ม หรือส่งในโซน 1–2 เพื่อความอร่อยร้อนๆ</p>
+  </div>
+</section>
+
+<!-- ===================== DELIVERY / ZONES ===================== -->
+<section class="section deliver-sec" id="deliver">
+  <div class="container">
+    <div class="center">
+      <span class="eyebrow">🚚 บริการจัดส่ง</span>
+      <h2 class="sec-title">รับเองก็ได้ ส่งถึงบ้านก็สะดวก</h2>
+      <p class="sec-sub">เลือกพื้นที่ของคุณด้านล่าง เพื่อดูค่าจัดส่งและระยะเวลาโดยประมาณ</p>
+    </div>
+
+    <div class="deliver-top">
+      <div class="mode-card pickup">
+        <div class="mc-ic">🏡</div>
+        <h3>รับเองที่ฟาร์ม</h3>
+        <p style="color:var(--muted);margin:0">สั่งล่วงหน้า แล้วแวะรับปลาสดๆ ที่ฟาร์มได้เลย</p>
+        <ul>
+          <li>ไม่มีค่าจัดส่ง</li>
+          <li>เลือกปลาตัวที่ถูกใจได้เองถึงบ่อ</li>
+          <li>ปลาเผา/ทอด ทำสดตอนคุณมาถึง</li>
+        </ul>
+      </div>
+      <div class="mode-card deliver">
+        <div class="mc-ic">🏍️</div>
+        <h3>จัดส่งถึงบ้าน</h3>
+        <p style="color:var(--muted);margin:0">ค่าส่งคิดตามระยะทางเป็นโซน โปร่งใส ไม่บวกเพิ่ม</p>
+        <ul>
+          <li>โซนใกล้ฟาร์ม ส่งฟรี / ค่าส่งเริ่มต้นถูก</li>
+          <li id="freeDelText">สั่งครบตามยอด ส่งฟรีในโซนใกล้</li>
+          <li>ส่งสดใหม่ แพ็กน้ำแข็งอย่างดี</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="zone-wrap">
+      <div class="zone-map">
+        <svg viewBox="0 0 320 300" aria-label="แผนที่โซนจัดส่งรอบฟาร์ม">
+          <circle cx="160" cy="150" r="140" fill="#eaf4ef" stroke="#cfe4d9"/>
+          <circle cx="160" cy="150" r="105" fill="#dff0e8" stroke="#bfdccf"/>
+          <circle cx="160" cy="150" r="68" fill="#cfe9dc" stroke="#a9d4c1"/>
+          <circle cx="160" cy="150" r="34" fill="#b7e0cd" stroke="#8eccb0"/>
+          <text x="160" y="26" text-anchor="middle" fill="#5c6b64" font-size="11" font-family="Prompt">โซน 4</text>
+          <text x="160" y="60" text-anchor="middle" fill="#3f5b4d" font-size="11" font-family="Prompt">โซน 3</text>
+          <text x="160" y="96" text-anchor="middle" fill="#2c5540" font-size="11" font-family="Prompt">โซน 2</text>
+          <text x="160" y="128" text-anchor="middle" fill="#155c43" font-size="11" font-family="Prompt">โซน 1</text>
+          <g transform="translate(160,150)">
+            <circle r="16" fill="#1f7a5a"/>
+            <text y="6" text-anchor="middle" font-size="16">🏡</text>
+          </g>
+          <circle cx="205" cy="120" r="5" fill="#c85018"/>
+          <circle cx="120" cy="205" r="5" fill="#c85018"/>
+          <circle cx="235" cy="200" r="5" fill="#c85018"/>
+        </svg>
+      </div>
+      <div class="zone-check">
+        <h3>เช็กค่าส่งพื้นที่ของคุณ</h3>
+        <p class="hint">เลือกพื้นที่จากรายการ หรือกดใช้ตำแหน่งปัจจุบันเพื่อคำนวณระยะทางอัตโนมัติ</p>
+        <div class="field">
+          <label for="areaSelect">เลือกพื้นที่ของคุณ</label>
+          <select id="areaSelect">
+            <option value="">— เลือกพื้นที่ —</option>
+          </select>
+        </div>
+        <div class="zone-actions">
+          <button class="btn btn-ghost btn-sm" id="geoBtn">📍 ใช้ตำแหน่งปัจจุบัน</button>
+        </div>
+        <div class="zone-result" id="zoneResult">
+          <div class="zr-head">
+            <span class="zr-zone" id="zrZone">โซน 1</span>
+            <span class="zr-fee" id="zrFee">ส่งฟรี</span>
+          </div>
+          <div class="zr-meta">
+            <span>📏 ระยะ ~<b id="zrKm">2</b> กม.</span>
+            <span>⏱️ ถึงใน <b id="zrEta">30–45 นาที</b></span>
+          </div>
+          <div style="margin-top:14px">
+            <button class="btn btn-fire btn-sm" id="useZoneBtn">🛒 ใช้โซนนี้แล้วเริ่มสั่ง</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== HOW TO ORDER ===================== -->
+<section class="section" id="how">
+  <div class="container">
+    <div class="center">
+      <span class="eyebrow">📝 สั่งง่ายใน 4 ขั้นตอน</span>
+      <h2 class="sec-title">สั่งปลานิลไม่ถึงนาที</h2>
+    </div>
+    <div class="steps" style="margin-top:34px">
+      <div class="step"><div class="num">1</div><h3>เลือกเมนู</h3><p>กดใส่ตะกร้าเมนูที่อยากได้ ปลาสดหรือปรุงสดก็ได้</p></div>
+      <div class="step"><div class="num">2</div><h3>เลือกวิธีรับ</h3><p>รับเองที่ฟาร์ม หรือส่งถึงบ้าน ระบบคิดค่าส่งให้</p></div>
+      <div class="step"><div class="num">3</div><h3>ยืนยันออเดอร์</h3><p>กรอกชื่อ-ที่อยู่ แล้วส่งออเดอร์ผ่าน LINE หรือโทร</p></div>
+      <div class="step"><div class="num">4</div><h3>รอรับปลาสด</h3><p>เราจับปลาสด แปรรูป แล้วส่ง/เตรียมให้ตามนัด</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TESTIMONIALS ===================== -->
+<section class="section testi-sec">
+  <div class="container center">
+    <span class="eyebrow" style="background:rgba(255,255,255,.14);color:#fff">⭐ ลูกค้าพูดถึงเรา</span>
+    <h2 class="sec-title">รีวิวจากคนที่ได้ลอง</h2>
+    <p class="sec-sub" style="margin:0 auto">ความสดคือคำตอบ — นี่คือเสียงจริงจากลูกค้าแถวบ้าน</p>
+    <div class="testi-grid">
+      <div class="testi">
+        <div class="stars" role="img" aria-label="ให้คะแนน 5 เต็ม 5 ดาว">★★★★★</div>
+        <p>“ปลาสดมาก เนื้อแน่น เอามาทอดกรอบอร่อยทั้งบ้าน ไม่มีกลิ่นโคลนเลย สั่งประจำแล้วค่ะ”</p>
+        <div class="who"><div class="av">ก</div><div><b>คุณกิ่ง</b><span>ลูกค้าประจำ · ในหมู่บ้าน</span></div></div>
+      </div>
+      <div class="testi">
+        <div class="stars" role="img" aria-label="ให้คะแนน 5 เต็ม 5 ดาว">★★★★★</div>
+        <p>“สั่งปลาเผาไปงานบ้าน มาร้อนๆ น้ำจิ้มแซ่บมาก ราคาคุ้มกว่าซื้อในตลาดเยอะ”</p>
+        <div class="who"><div class="av">ต</div><div><b>คุณต้น</b><span>สั่งเซ็ตปาร์ตี้</span></div></div>
+      </div>
+      <div class="testi">
+        <div class="stars" role="img" aria-label="ให้คะแนน 5 เต็ม 5 ดาว">★★★★★</div>
+        <p>“ชอบที่บั้งมาให้พร้อมทอดเลย ไม่ต้องเลอะมือ ลงกระทะได้ทันที สะดวกสุดๆ”</p>
+        <div class="who"><div class="av">น</div><div><b>คุณหน่อย</b><span>สั่งปลาบั้งพร้อมทอด</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FAQ ===================== -->
+<section class="section" id="faq">
+  <div class="container">
+    <div class="center">
+      <span class="eyebrow">❓ คำถามที่พบบ่อย</span>
+      <h2 class="sec-title">เรื่องที่ลูกค้าถามบ่อย</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq" open><summary>ปลาสดแค่ไหน? <span class="chev" aria-hidden="true">⌄</span></summary>
+        <div class="ans">เราจับปลาขึ้นจากบ่อในวันที่จัดส่ง/นัดรับ ไม่ได้แช่ค้างหลายวัน จึงเนื้อแน่นและไม่มีกลิ่นโคลน</div></details>
+      <details class="faq"><summary>สั่งขั้นต่ำเท่าไหร่? <span class="chev" aria-hidden="true">⌄</span></summary>
+        <div class="ans">รับเองไม่มีขั้นต่ำ ส่วนแบบจัดส่งมีขั้นต่ำ <b data-config="minOrder">200</b> บาท เพื่อให้คุ้มค่ารอบส่ง</div></details>
+      <details class="faq"><summary>ต้องสั่งล่วงหน้าไหม? <span class="chev" aria-hidden="true">⌄</span></summary>
+        <div class="ans">เมนูปลาสดสั่งได้เลย ส่วนปลาเผา/ปรุงสด แนะนำสั่งล่วงหน้าอย่างน้อย 1–2 ชั่วโมง เพื่อเตรียมสดใหม่</div></details>
+      <details class="faq"><summary>จ่ายเงินยังไง? <span class="chev" aria-hidden="true">⌄</span></summary>
+        <div class="ans">โอนผ่านพร้อมเพย์/ธนาคาร หรือเก็บเงินปลายทาง (เฉพาะบางโซน) เลขพร้อมเพย์จะแสดงในหน้าตะกร้าและแนบไปกับออเดอร์ทาง LINE ให้อัตโนมัติ</div></details>
+      <details class="faq"><summary>ส่งไกลได้แค่ไหน? <span class="chev" aria-hidden="true">⌄</span></summary>
+        <div class="ans">ส่งได้ถึงโซน 3 (~25 กม.) เกินกว่านั้นทักมาคุยกันได้ เรามีบริการจัดส่งแบบแช่เย็นเป็นกรณีพิเศษ</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CONTACT ===================== -->
+<section class="section contact-sec" id="contact">
+  <div class="container">
+    <div class="center">
+      <span class="eyebrow">📞 ติดต่อ / สั่งซื้อ</span>
+      <h2 class="sec-title">พร้อมส่งความสดถึงมือคุณ</h2>
+    </div>
+    <div class="contact-grid" style="margin-top:34px">
+      <div class="contact-card">
+        <ul class="contact-list">
+          <li><div class="ci">📍</div><div><div class="cl">ที่ตั้งฟาร์ม</div><div class="cv" data-config="address">xxx หมู่ x ต.____ อ.____ จ.____</div></div></li>
+          <li><div class="ci">📞</div><div><div class="cl">โทรสั่ง</div><a class="cv" id="phoneLink" href="#" data-config="phone">08X-XXX-XXXX</a></div></li>
+          <li><div class="ci">💬</div><div><div class="cl">LINE</div><div class="cv" data-config="lineId">@yourline</div></div></li>
+          <li id="payLi" style="display:none"><div class="ci">💳</div><div><div class="cl">โอนพร้อมเพย์</div><div class="cv" id="payLiVal"></div></div></li>
+          <li><div class="ci">🕒</div><div><div class="cl">เวลาทำการ</div><div class="cv" data-config="hours">ทุกวัน 8:00–18:00 น.</div></div></li>
+        </ul>
+        <a class="btn btn-ghost btn-block" id="mapLink" href="#" target="_blank" rel="noopener" style="margin-top:16px">🗺️ เปิดแผนที่ Google Maps</a>
+      </div>
+      <div class="contact-cta">
+        <h3>สั่งเลยวันนี้ 🐟</h3>
+        <p>เลือกเมนู ใส่ตะกร้า แล้วส่งออเดอร์ให้เราทาง LINE หรือโทรได้เลย</p>
+        <a class="btn btn-line btn-block" id="lineChatBtn" href="#" target="_blank" rel="noopener">💬 ทักแชท LINE</a>
+        <button class="btn btn-fire btn-block" onclick="Shop.openCart()">🛒 ดูตะกร้า &amp; สั่งซื้อ</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="brand" style="margin-bottom:10px">
+          <svg class="logo" viewBox="0 0 64 64" width="34" height="34" aria-hidden="true">
+            <circle cx="32" cy="32" r="32" fill="#1f7a5a"/>
+            <path d="M14 34c8-11 22-14 30-8 3 2 6 5 6 5s-3 3-6 5c-8 6-22 3-30-7z" fill="#fbf6ec"/>
+            <path d="M50 26l8-6-2 11 2 11-8-6z" fill="#f2b705"/><circle cx="24" cy="30" r="2.6" fill="#22312c"/>
+          </svg>
+          <span data-config="brand">ปลานิลหอมสิน</span>
+        </div>
+        <p style="color:#a9bab2;font-size:.92rem;max-width:280px">ปลานิลสดจากบ่อ เลี้ยงเอง แปรรูปเอง ส่งตรงถึงครัวคุณ ในราคายุติธรรมจากคนเลี้ยงจริง</p>
+      </div>
+      <div>
+        <h4>เมนูลัด</h4>
+        <a href="#menu">เมนูทั้งหมด</a>
+        <a href="#deliver">เช็กค่าจัดส่ง</a>
+        <a href="#how">วิธีสั่งซื้อ</a>
+        <a href="#faq">คำถามที่พบบ่อย</a>
+      </div>
+      <div>
+        <h4>ติดต่อเรา</h4>
+        <a href="#" data-config="phone">08X-XXX-XXXX</a>
+        <a href="#" id="lineFooter" target="_blank" rel="noopener">LINE: <span data-config="lineId">@yourline</span></a>
+        <a href="#contact" data-config="hours">ทุกวัน 8:00–18:00 น.</a>
+      </div>
+    </div>
+    <div class="copy">© <span id="year">2026</span> <span data-config="brand">ปลานิลหอมสิน</span> · ทำด้วยใจจากคนเลี้ยงปลา 🐟</div>
+  </div>
+</footer>
+
+<!-- ===================== CART DRAWER ===================== -->
+<div class="overlay" id="overlay" onclick="Shop.closeCart()"></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="ตะกร้าสินค้า" tabindex="-1">
+  <div class="drawer-head">
+    <h3>🛒 ตะกร้าของคุณ</h3>
+    <button class="drawer-close" onclick="Shop.closeCart()" aria-label="ปิดตะกร้า">×</button>
+  </div>
+  <div class="drawer-body" id="drawerBody"><!-- items --></div>
+  <div class="checkout" id="checkout" style="display:none">
+    <div class="seg" id="modeSeg" role="group" aria-label="วิธีรับสินค้า">
+      <button class="active" data-mode="delivery" aria-pressed="true">🏍️ จัดส่ง</button>
+      <button data-mode="pickup" aria-pressed="false">🏡 รับเอง</button>
+    </div>
+
+    <div id="deliverFields">
+      <div class="co-field" id="zoneField">
+        <label for="coZone">โซนจัดส่ง</label>
+        <select id="coZone"></select>
+      </div>
+    </div>
+
+    <div class="co-field"><label for="fName">ชื่อผู้สั่ง</label><input id="fName" placeholder="ชื่อ-นามสกุล"></div>
+    <div class="co-row">
+      <div class="co-field"><label for="fPhone">เบอร์โทร</label><input id="fPhone" placeholder="08X-XXX-XXXX" inputmode="tel"></div>
+      <div class="co-field"><label for="fTime">เวลาที่ต้องการ</label><input id="fTime" placeholder="เช่น วันนี้ 17:00"></div>
+    </div>
+    <span class="fld-hint" id="hoursHint">เปิดรับ 8:00–18:00 น. · เมนูปรุงสด/ปลาเผา สั่งล่วงหน้า 1–2 ชม.</span>
+    <div class="co-field" id="addrField" style="margin-top:10px"><label for="fAddr">ที่อยู่จัดส่ง / พิกัด</label><textarea id="fAddr" rows="2" placeholder="บ้านเลขที่ / จุดสังเกต / ลิงก์พิกัด Google Maps"></textarea></div>
+    <div class="co-field"><label for="fNote">หมายเหตุ (ถ้ามี)</label><input id="fNote" placeholder="เช่น ขอแยกน้ำจิ้ม, ทอดให้กรอบ"></div>
+
+    <div class="summary-line"><span>ยอดสินค้า</span><span id="subTotal">฿0</span></div>
+    <div class="kg-disclaimer" id="kgNote" style="display:none">* ยอดปลาสด (กก.) เป็นราคาโดยประมาณ คิดตามน้ำหนักจริงตอนจับ</div>
+    <div class="summary-line" id="feeLine"><span>ค่าจัดส่ง <small id="feeZoneLabel"></small></span><span id="feeAmt">฿0</span></div>
+    <div class="summary-line total"><span>รวมทั้งสิ้น</span><span class="amt" id="grandTotal">฿0</span></div>
+
+    <div class="note-box warn-min" id="warnMin"></div>
+    <div class="note-box free-prog" id="freeProg"></div>
+    <div class="pay-info" id="payInfo"></div>
+    <div class="co-hint" id="coHint"></div>
+
+    <div class="checkout-actions">
+      <button class="btn btn-line btn-block" id="lineOrderBtn">💬 ส่งออเดอร์ผ่าน LINE</button>
+      <div class="row2">
+        <button class="btn btn-ghost btn-sm" id="copyOrderBtn">📋 คัดลอกออเดอร์</button>
+        <a class="btn btn-fire btn-sm" id="callOrderBtn" href="#">📞 โทรสั่ง</a>
+      </div>
+      <p class="order-trust">🧊 จับสดวันส่ง · 🧼 แพ็กสะอาด · ✅ ร้านโทร/LINE ยืนยันทุกออเดอร์</p>
+    </div>
+  </div>
+</aside>
+
+<!-- ===================== MOBILE CART BAR ===================== -->
+<div class="mcart" id="mcart">
+  <div class="mc-total"><span>ยอดในตะกร้า</span><span id="mcartTotal">฿0</span></div>
+  <button class="btn btn-fire btn-sm" onclick="Shop.openCart()">ดูตะกร้า →</button>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+/* ============================================================
+   ⚙️ CONFIG — แก้ข้อมูลร้านตรงนี้ที่เดียว
+   ★ ก่อนเผยแพร่จริง ให้แก้ให้ครบ: phone, lineId/lineUrl, address, mapUrl, shopLat/shopLng
+   (ถ้ายังไม่แก้ จะมีแถบสีแดงเตือนด้านล่างจอ)
+   ============================================================ */
+const CONFIG = {
+  brand:      "ปลานิลหอมสิน",
+  tagline:    "สดจากบ่อ ส่งตรงถึงครัวคุณ",
+  currency:   "฿",
+  phone:      "08X-XXX-XXXX",              // เบอร์โทรร้าน
+
+  // 📱 LINE — มี 2 แบบ:
+  //   (ก) LINE OA (แนะนำ): เปิดแอป "LINE Official Account Manager" → การตั้งค่า → ข้อมูลบัญชี
+  //       → คัดลอก "Basic ID" ที่ขึ้นต้นด้วย @ (เช่น @abc1234)
+  //       ★ เฉพาะ ID ที่ขึ้นต้นด้วย @ เท่านั้น ระบบจึงเด้งข้อความสรุปออเดอร์ให้ลูกค้าอัตโนมัติ
+  //   (ข) LINE ส่วนตัว: เปิด LINE → โปรไฟล์ → ไอคอน QR → "แชร์ลิงก์โปรไฟล์"
+  //       จะได้ลิงก์แบบ https://line.me/ti/p/xxxx (แบบนี้ลูกค้าต้องวางสรุปออเดอร์เอง — ระบบคัดลอกให้แล้ว)
+  lineId:     "@yourline",                 // ใส่ Basic ID (@...) ถ้ามี OA; ถ้าใช้ LINE ส่วนตัวปล่อยไว้ก็ได้ แต่ให้ตั้ง lineUrl ให้ถูก
+  lineUrl:    "https://line.me/R/ti/p/@yourline", // ลิงก์แชท LINE (ใช้เมื่อ lineId ไม่ได้ขึ้นต้นด้วย @)
+
+  address:    "xxx หมู่ x ต.____ อ.____ จ.____",
+  hours:      "ทุกวัน 8:00–18:00 น.",
+
+  // 🗺️ พิกัดร้าน: เปิด Google Maps → ค้นหาฟาร์ม/ปักหมุด → กด "แชร์" → "คัดลอกลิงก์" → วางตรงนี้
+  mapUrl:     "https://www.google.com/maps",
+  shopLat:    14.0000,                      // พิกัดฟาร์ม (ละติจูด) — สำหรับปุ่ม "ใช้ตำแหน่งปัจจุบัน"
+  shopLng:    100.0000,                     // พิกัดฟาร์ม (ลองจิจูด)
+
+  // 💳 การรับเงิน (ไม่บังคับ — เว้นว่างไว้จะไม่แสดง)
+  promptpay:     "",                        // เบอร์พร้อมเพย์/เลขบัตรประชาชนรับเงิน เช่น "0812345678"
+  promptpayName: "",                        // ชื่อบัญชีพร้อมเพย์ เช่น "นายสมชาย ใจดี"
+  payNote:       "โอนแล้วส่งสลิปยืนยันในแชต LINE ได้เลย",
+
+  siteUrl:    "",                           // ลิงก์เว็บจริงตอนอัปโหลดออนไลน์ (ใช้ทำ SEO/แชร์) เช่น "https://myfarm.com/"
+
+  minOrder:   200,                          // ยอดขั้นต่ำสำหรับจัดส่ง
+  freeDeliveryOver: 500,                    // ยอดที่ส่งฟรีในโซนใกล้ (freeEligible)
+
+  // โซนจัดส่ง (เรียงจากใกล้ไปไกล) — แก้ค่าส่ง/ระยะได้ตามจริง
+  zones: [
+    { id:1, name:"โซน 1", range:"0–5 กม.",   maxKm:5,        fee:0,    eta:"30–45 นาที", freeEligible:true  },
+    { id:2, name:"โซน 2", range:"5–12 กม.",  maxKm:12,       fee:30,   eta:"45–60 นาที", freeEligible:true  },
+    { id:3, name:"โซน 3", range:"12–25 กม.", maxKm:25,       fee:60,   eta:"1–1.5 ชม.",  freeEligible:false },
+    { id:4, name:"โซน 4", range:"เกิน 25 กม.", maxKm:Infinity, fee:null, eta:"นัดหมาย",   freeEligible:false, contact:true },
+  ],
+
+  // พื้นที่ตัวอย่าง (แก้เป็นชื่อ ตำบล/อำเภอ จริง + ระยะทางโดยประมาณเป็น กม.)
+  areas: [
+    { name:"ในหมู่บ้าน / ตำบลของฟาร์ม", km:2 },
+    { name:"ตัวอำเภอ",                 km:8 },
+    { name:"ตำบลใกล้เคียง",             km:15 },
+    { name:"อำเภอข้างเคียง",           km:22 },
+    { name:"ในตัวจังหวัด",             km:32 },
+  ],
+};
+
+/* ============================================================
+   🐟 เมนู — เพิ่ม/แก้ไขรายการได้ที่นี่
+   type: 'fresh' ปลาสดพร้อมปรุง | 'cook' ปรุงสด | 'set' เซ็ต
+   รูปสินค้า (ไม่บังคับ แต่แนะนำ ให้ดูน่าซื้อขึ้นมาก):
+     1) สร้างโฟลเดอร์ชื่อ "images" ไว้ข้างไฟล์นี้
+     2) เซฟรูปแต่ละเมนู เช่น images/pla-phao.jpg (แนวนอน ~800x600)
+     3) เพิ่ม  img:"images/pla-phao.jpg"  ในรายการนั้น (ดูตัวอย่างที่คอมเมนต์ไว้)
+   ไม่มีรูปก็ได้ ระบบจะโชว์อิโมจิบนพื้นไล่สีให้อัตโนมัติ
+   ============================================================ */
+const MENU = [
+  // ตัวอย่างใส่รูปจริง (แกะคอมเมนต์แล้วชี้ไปที่ไฟล์รูปของคุณ):
+  // { id:"f0", category:"fresh", type:"fresh", emoji:"🐟", img:"images/pla-phao.jpg", name:"ปลานิลเผา", desc:"...", price:160, unit:"ตัว", badge:"" },
+  { id:"f1", category:"fresh", type:"fresh", emoji:"🐟", name:"ปลานิลสดทั้งตัว", desc:"ขอดเกล็ด ควักไส้ ทำสะอาด พร้อมปรุง", price:85,  unit:"กก.", badge:"ขายดี" },
+  { id:"f2", category:"fresh", type:"fresh", emoji:"🍤", name:"ปลานิลบั้งพร้อมทอด", desc:"กรีดข้างตัว (บั้ง) มาให้เรียบร้อย ลงกระทะทอดได้เลย ไม่ต้องเตรียมเอง", price:95,  unit:"กก.", badge:"สะดวก" },
+  { id:"f3", category:"fresh", type:"fresh", emoji:"🍣", name:"เนื้อปลานิลแล่ (เลาะก้างใหญ่ออก)", desc:"แล่เป็นชิ้น เลาะก้างออกให้แล้ว ทำเมนูอะไรก็สะดวก", price:150, unit:"แพ็ก 500ก.", badge:"" },
+  { id:"f4", category:"fresh", type:"fresh", emoji:"🌤️", name:"ปลานิลแดดเดียว", desc:"หมักสูตรเด็ด ตากแดดเดียว ทอดหอมกรอบ", price:180, unit:"แพ็ก 2 ตัว", badge:"" },
+
+  { id:"c1", category:"cook", type:"cook", emoji:"🔥", name:"ปลานิลเผาเกลือ", desc:"เตาถ่านแท้ พอกเกลือ หอม เนื้อฉ่ำ (~800ก.-1กก.)", price:160, unit:"ตัว", badge:"เตาถ่าน" },
+  { id:"c2", category:"cook", type:"cook", emoji:"🍳", name:"ปลานิลทอดน้ำปลา", desc:"ทอดกรอบนอกนุ่มใน ราดน้ำปลาหวาน", price:150, unit:"ตัว", badge:"" },
+  { id:"c3", category:"cook", type:"cook", emoji:"🌶️", name:"ปลานิลราดพริกสามรส", desc:"ทอดกรอบราดซอสสามรส เปรี้ยว หวาน เผ็ด", price:220, unit:"ตัว", badge:"รสเด็ด" },
+  { id:"c4", category:"cook", type:"cook", emoji:"🧄", name:"ปลานิลทอดกระเทียม", desc:"ทอดกระเทียมพริกไทยหอมๆ กินกับข้าวสวย", price:160, unit:"ตัว", badge:"" },
+  { id:"c5", category:"cook", type:"cook", emoji:"🍲", name:"ฉู่ฉี่ปลานิล", desc:"ราดพริกแกงฉู่ฉี่เข้มข้น หอมกะทิ", price:180, unit:"ถุง", badge:"" },
+  { id:"c6", category:"cook", type:"cook", emoji:"🥘", name:"ต้มยำปลานิลน้ำข้น", desc:"แซ่บร้อนๆ สมุนไพรเต็มหม้อ", price:160, unit:"ถุง", badge:"" },
+
+  { id:"s1", category:"set", type:"cook", emoji:"👨‍👩‍👧", name:"เซ็ตครอบครัว", desc:"ปลาเผา 1 + ทอดน้ำปลา 1 + น้ำจิ้ม 2 (อิ่ม 3–4 คน)", price:320, unit:"เซ็ต", badge:"คุ้ม" },
+  { id:"s2", category:"set", type:"cook", emoji:"🎉", name:"เซ็ตปาร์ตี้", desc:"ปลา 4 เมนู + ผักสด + น้ำจิ้ม (อิ่ม 6–8 คน)", price:590, unit:"เซ็ต", badge:"ปาร์ตี้" },
+];
+
+/* ============================================================
+   🧠 ระบบร้าน (Shop)
+   ============================================================ */
+const Shop = (() => {
+  const $  = (s, r=document) => r.querySelector(s);
+  const $$ = (s, r=document) => [...r.querySelectorAll(s)];
+  const fmt = n => CONFIG.currency + Number(n).toLocaleString('th-TH');
+  const isByKg = m => /กก\.|กิโล/.test(m.unit);
+
+  const CART_KEY = 'plaNinCart';
+  const state = {
+    cart: {},                 // id -> qty
+    category: 'all',
+    mode: 'delivery',         // 'delivery' | 'pickup'
+    zoneId: null,             // เลือกโซนสำหรับจัดส่ง
+  };
+
+  /* ---------- helpers ---------- */
+  const itemById = id => MENU.find(m => m.id === id);
+  const zoneById = id => CONFIG.zones.find(z => z.id === id) || null;
+  const cartEntries = () => Object.entries(state.cart).filter(([id,q]) => q > 0 && itemById(id));
+  const cartCount = () => cartEntries().reduce((s,[,q]) => s + q, 0);
+  const subtotal  = () => cartEntries().reduce((s,[id,q]) => s + itemById(id).price * q, 0);
+  const hasKg     = () => cartEntries().some(([id]) => isByKg(itemById(id)));
+
+  function saveCart(){ try{ localStorage.setItem(CART_KEY, JSON.stringify(state.cart)); }catch(e){} }
+  function loadCart(){
+    try{
+      const raw = JSON.parse(localStorage.getItem(CART_KEY) || '{}');
+      const clean = {};
+      for (const [id,q] of Object.entries(raw)){ if (itemById(id) && q > 0) clean[id] = q; }
+      state.cart = clean;
+    }catch(e){}
+  }
+
+  function zoneForKm(km){
+    for (const z of CONFIG.zones){ if (km <= z.maxKm) return z; }
+    return CONFIG.zones[CONFIG.zones.length - 1];
+  }
+  function haversine(lat1,lng1,lat2,lng2){
+    const R=6371, toRad=d=>d*Math.PI/180;
+    const dLat=toRad(lat2-lat1), dLng=toRad(lng2-lng1);
+    const a=Math.sin(dLat/2)**2 + Math.cos(toRad(lat1))*Math.cos(toRad(lat2))*Math.sin(dLng/2)**2;
+    return R*2*Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+  }
+  // ค่าส่ง: คืน number, หรือ null ถ้าต้องติดต่อร้าน
+  function deliveryFee(){
+    if (state.mode === 'pickup') return 0;
+    const z = zoneById(state.zoneId);
+    if (!z) return 0;
+    if (z.contact) return null;
+    if (z.fee === 0) return 0;
+    if (subtotal() >= CONFIG.freeDeliveryOver && z.freeEligible) return 0;
+    return z.fee;
+  }
+
+  /* ---------- render: menu ---------- */
+  function menuCard(m){
+    const tag = m.type === 'cook'
+      ? '<span class="tag tag-hot">🔥 ปรุงสด</span>'
+      : '<span class="tag tag-cool">🧊 ส่งได้ทุกโซน</span>';
+    const badge = m.badge ? `<span class="badge">${m.badge}</span>` : '';
+    const imgStyle = m.img ? ` style="--img:url('${m.img}')"` : '';
+    return `<article class="card" data-cat="${m.category}">
+      <div class="card-media"${imgStyle}><span class="card-emoji">${m.emoji}</span>${badge}</div>
+      <div class="card-body">
+        <h3>${m.name}</h3>
+        <p class="card-desc">${m.desc}</p>
+        <div class="card-tags">${tag}</div>
+        <div class="card-foot">
+          <div class="price">${CONFIG.currency}${m.price}<span class="unit">/${m.unit}</span></div>
+          <button class="btn btn-add btn-sm" data-add="${m.id}">+ ใส่ตะกร้า</button>
+        </div>
+      </div>
+    </article>`;
+  }
+  function renderMenu(){
+    const list = state.category === 'all' ? MENU : MENU.filter(m => m.category === state.category);
+    $('#menuGrid').innerHTML = list.map(menuCard).join('');
+  }
+
+  /* ---------- render: cart ---------- */
+  function cartItemRow(id, q){
+    const m = itemById(id);
+    const kg = isByKg(m) ? '<div class="kg-note">*ราคาโดยประมาณ ชั่งจริงตอนจับ</div>' : '';
+    return `<div class="citem">
+      <div class="citem-media">${m.emoji}</div>
+      <div class="citem-info">
+        <h4>${m.name}</h4>
+        <div class="cu">${CONFIG.currency}${m.price} / ${m.unit}</div>
+        <div class="citem-bottom">
+          <div class="qty">
+            <button data-dec="${id}" aria-label="ลดจำนวน ${m.name}">−</button>
+            <span>${q}</span>
+            <button data-inc="${id}" aria-label="เพิ่มจำนวน ${m.name}">+</button>
+          </div>
+          <div style="text-align:right">
+            <div class="lp">${fmt(m.price * q)}</div>
+            ${kg}
+            <button class="remove" data-rm="${id}">ลบ</button>
+          </div>
+        </div>
+      </div>
+    </div>`;
+  }
+
+  function renderCart(){
+    saveCart();
+    const entries = cartEntries();
+    const count = cartCount();
+
+    // header badge
+    const badge = $('#cartCount');
+    badge.textContent = count;
+    badge.style.display = count ? 'flex' : 'none';
+
+    // mobile bar
+    $('#mcartTotal').textContent = fmt(subtotal());
+    document.body.classList.toggle('has-mcart', count > 0);
+
+    const body = $('#drawerBody');
+    const checkout = $('#checkout');
+
+    if (!entries.length){
+      body.innerHTML = `<div class="cart-empty"><div class="em">🛒</div>
+        <p>ตะกร้ายังว่างอยู่<br>เลือกเมนูอร่อยๆ ใส่ตะกร้าได้เลย</p>
+        <a href="#menu" class="btn btn-ghost btn-sm" onclick="Shop.closeCart()">ดูเมนู</a></div>`;
+      checkout.style.display = 'none';
+      return;
+    }
+    body.innerHTML = entries.map(([id,q]) => cartItemRow(id,q)).join('');
+    checkout.style.display = 'block';
+    renderSummary();
+  }
+
+  function renderSummary(){
+    const sub = subtotal();
+    const fee = deliveryFee();
+    const z = zoneById(state.zoneId);
+    $('#subTotal').textContent = fmt(sub);
+    $('#kgNote').style.display = hasKg() ? 'block' : 'none';
+
+    // fee line + grand total
+    const feeLine = $('#feeLine');
+    feeLine.style.display = 'flex';
+    if (state.mode === 'pickup'){
+      $('#feeZoneLabel').textContent = '(รับเอง)';
+      $('#feeAmt').textContent = 'ฟรี';
+      $('#grandTotal').textContent = fmt(sub);
+    } else if (fee === null){
+      $('#feeZoneLabel').textContent = z ? `(${z.name})` : '';
+      $('#feeAmt').textContent = 'ติดต่อร้าน';
+      $('#grandTotal').textContent = fmt(sub) + ' + ค่าส่ง (แจ้งภายหลัง)';
+    } else {
+      $('#feeZoneLabel').textContent = z ? `(${z.name})` : '';
+      $('#feeAmt').textContent = fee === 0 ? 'ฟรี' : fmt(fee);
+      $('#grandTotal').textContent = fmt(sub + fee);
+    }
+
+    // gating logic
+    const belowMin    = state.mode === 'delivery' && sub < CONFIG.minOrder;
+    const needZone    = state.mode === 'delivery' && !state.zoneId;
+    const contactZone = state.mode === 'delivery' && z && z.contact;
+    const nameOk  = $('#fName').value.trim().length > 0;
+    const phoneOk = /^0\d{8,9}$/.test($('#fPhone').value.replace(/[-\s]/g,''));
+    const addrOk  = state.mode !== 'delivery' || $('#fAddr').value.trim().length > 0;
+    const contactBad = !nameOk || !phoneOk || !addrOk;
+    const hardBlock  = (belowMin && !contactZone) || needZone;
+
+    // min-order warning
+    const warn = $('#warnMin');
+    if (belowMin && !contactZone){
+      warn.textContent = `⚠️ ยอดจัดส่งขั้นต่ำ ${fmt(CONFIG.minOrder)} — สั่งเพิ่มอีก ${fmt(CONFIG.minOrder - sub)} หรือเลือก “รับเอง”`;
+      warn.classList.add('show');
+    } else warn.classList.remove('show');
+
+    // free-delivery upsell (โซนที่มีค่าส่งและปกติฟรีเมื่อครบยอด)
+    const freeProg = $('#freeProg');
+    if (state.mode === 'delivery' && z && z.freeEligible && z.fee > 0
+        && sub >= CONFIG.minOrder && sub < CONFIG.freeDeliveryOver){
+      freeProg.textContent = `🚚 สั่งอีก ${fmt(CONFIG.freeDeliveryOver - sub)} รับส่งฟรี!`;
+      freeProg.classList.add('show');
+    } else freeProg.classList.remove('show');
+
+    // payment info
+    const pf = $('#payInfo');
+    if (CONFIG.promptpay){
+      pf.style.display = 'block';
+      pf.innerHTML = `💳 โอนพร้อมเพย์: <b>${CONFIG.promptpay}</b>`
+        + (CONFIG.promptpayName ? ` (${CONFIG.promptpayName})` : '')
+        + (CONFIG.payNote ? `<br><small>${CONFIG.payNote}</small>` : '');
+    } else pf.style.display = 'none';
+
+    // enable/disable order actions
+    $('#copyOrderBtn').disabled = hardBlock;
+    $('#lineOrderBtn').disabled = hardBlock || contactBad;
+    $('#lineOrderBtn').textContent = contactZone
+      ? '💬 ทัก LINE เพื่อเช็กค่าส่ง'
+      : '💬 ส่งออเดอร์ผ่าน LINE';
+
+    // hint: what fields are still needed
+    const coHint = $('#coHint');
+    if (!hardBlock && contactBad){
+      const need = [];
+      if (!nameOk)  need.push('ชื่อ');
+      if (!phoneOk) need.push('เบอร์โทร');
+      if (!addrOk)  need.push('ที่อยู่');
+      coHint.textContent = 'กรอก ' + need.join(' · ') + ' ให้ครบก่อนกดส่งออเดอร์ผ่าน LINE';
+      coHint.style.display = 'block';
+    } else coHint.style.display = 'none';
+  }
+
+  /* ---------- order text ---------- */
+  function orderText(){
+    const lines = [];
+    lines.push(`🐟 ออเดอร์ใหม่ · ${CONFIG.brand}`);
+    lines.push(`🕒 ${new Date().toLocaleString('th-TH')}`);
+    lines.push('────────────────');
+    cartEntries().forEach(([id,q]) => {
+      const m = itemById(id);
+      lines.push(`• ${m.name} x${q} = ${fmt(m.price*q)}`);
+    });
+    lines.push('────────────────');
+    const sub = subtotal(), fee = deliveryFee(), z = zoneById(state.zoneId);
+    lines.push(`ยอดสินค้า: ${fmt(sub)}`);
+    if (hasKg()) lines.push('* ยอดปลาสด(กก.) เป็นราคาประมาณ คิดตามน้ำหนักจริง');
+    if (state.mode === 'pickup'){
+      lines.push('รูปแบบ: 🏡 รับเองที่ฟาร์ม');
+    } else {
+      const feeTxt = fee === null ? 'ติดต่อร้าน' : (fee === 0 ? 'ฟรี' : fmt(fee));
+      lines.push(`ค่าจัดส่ง${z?` (${z.name} · ${z.eta})`:''}: ${feeTxt}`);
+      lines.push(`รวมทั้งสิ้น: ${fee===null? fmt(sub)+' (ยังไม่รวมค่าส่ง ทางร้านจะแจ้งอีกครั้ง)' : fmt(sub + fee)}`);
+      lines.push('รูปแบบ: 🏍️ จัดส่งถึงบ้าน');
+    }
+    lines.push('────────────────');
+    const name = $('#fName').value.trim();
+    const phone = $('#fPhone').value.trim();
+    const time = $('#fTime').value.trim();
+    const addr = $('#fAddr').value.trim();
+    const note = $('#fNote').value.trim();
+    lines.push(`ชื่อ: ${name || '-'}`);
+    lines.push(`เบอร์: ${phone || '-'}`);
+    if (state.mode === 'delivery') lines.push(`ที่อยู่/พิกัด: ${addr || '-'}`);
+    lines.push(`เวลาที่ต้องการ: ${time || '-'}`);
+    if (note) lines.push(`หมายเหตุ: ${note}`);
+    if (CONFIG.promptpay) lines.push(`💳 ชำระ: โอนพร้อมเพย์ ${CONFIG.promptpay}${CONFIG.promptpayName?` (${CONFIG.promptpayName})`:''}`);
+    return lines.join('\n');
+  }
+
+  function lineOrderURL(){
+    const text = orderText();
+    if (CONFIG.lineId && CONFIG.lineId.startsWith('@')){
+      return `https://line.me/R/oaMessage/${encodeURIComponent(CONFIG.lineId)}/?${encodeURIComponent(text)}`;
+    }
+    return CONFIG.lineUrl || 'https://line.me';
+  }
+
+  async function copyText(text){
+    try{
+      await navigator.clipboard.writeText(text);
+      return true;
+    }catch(e){
+      const ta = document.createElement('textarea');
+      ta.value = text; ta.style.position='fixed'; ta.style.opacity='0';
+      document.body.appendChild(ta); ta.select();
+      let ok=false; try{ ok=document.execCommand('copy'); }catch(_){}
+      document.body.removeChild(ta);
+      return ok;
+    }
+  }
+
+  /* ---------- cart actions ---------- */
+  function add(id){
+    if(!itemById(id)) return;
+    state.cart[id] = (state.cart[id] || 0) + 1;
+    renderCart(); toast(`เพิ่ม “${itemById(id).name}” แล้ว 🛒`);
+  }
+  function inc(id){ state.cart[id] = (state.cart[id]||0)+1; renderCart(); }
+  function dec(id){ state.cart[id] = Math.max(0,(state.cart[id]||0)-1); if(!state.cart[id]) delete state.cart[id]; renderCart(); }
+  function remove(id){ delete state.cart[id]; renderCart(); }
+
+  /* ---------- drawer + focus trap ---------- */
+  let lastFocus = null;
+  function trapTab(e){
+    if (e.key !== 'Tab') return;
+    const f = $$('#drawer a[href],#drawer button:not([disabled]),#drawer input,#drawer select,#drawer textarea')
+      .filter(el => el.offsetParent !== null);
+    if (!f.length) return;
+    const first = f[0], last = f[f.length-1];
+    if (e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
+  }
+  function openCart(){
+    lastFocus = document.activeElement;
+    $('#overlay').classList.add('show'); $('#drawer').classList.add('show');
+    $('#openCart').setAttribute('aria-expanded','true');
+    document.body.style.overflow='hidden';
+    const c = $('#drawer .drawer-close'); if (c) c.focus();
+    document.addEventListener('keydown', trapTab);
+  }
+  function closeCart(){
+    $('#overlay').classList.remove('show'); $('#drawer').classList.remove('show');
+    $('#openCart').setAttribute('aria-expanded','false');
+    document.body.style.overflow='';
+    document.removeEventListener('keydown', trapTab);
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+
+  /* ---------- zone checker ---------- */
+  function showZoneResult(km, z){
+    const r = $('#zoneResult');
+    $('#zrZone').textContent = z.name;
+    $('#zrKm').textContent = km == null ? '—' : Math.round(km);
+    $('#zrEta').textContent = z.eta;
+    const feeTxt = z.contact ? 'ติดต่อร้าน' : (z.fee === 0 ? 'ส่งฟรี'
+      : (`${CONFIG.currency}${z.fee}` + (z.freeEligible ? ` · ฟรีเมื่อครบ ${fmt(CONFIG.freeDeliveryOver)}` : '')));
+    $('#zrFee').textContent = feeTxt;
+    r.classList.toggle('warn', !!z.contact);
+    r.classList.add('show');
+    r.dataset.zone = z.id;
+  }
+
+  /* ---------- toast ---------- */
+  let toastTimer;
+  function toast(msg){
+    const t = $('#toast'); t.textContent = msg; t.classList.add('show');
+    clearTimeout(toastTimer); toastTimer = setTimeout(()=>t.classList.remove('show'), 2600);
+  }
+
+  /* ---------- populate config-driven UI ---------- */
+  function applyConfig(){
+    document.title = `${CONFIG.brand} · ${CONFIG.tagline}`;
+    $$('[data-config]').forEach(el => {
+      const key = el.dataset.config;
+      if (key === 'startPrice'){ el.textContent = `${CONFIG.currency}${Math.min(...MENU.map(m=>m.price))}`; return; }
+      if (key in CONFIG) el.textContent = CONFIG[key];
+    });
+    // phone links (รวมทั้งใน footer)
+    const tel = 'tel:' + CONFIG.phone.replace(/[^0-9+]/g,'');
+    $$('a[data-config="phone"]').forEach(a => a.href = tel);
+    $('#callOrderBtn').href = tel;
+    // other links
+    $('#mapLink').href = CONFIG.mapUrl;
+    $('#lineChatBtn').href = CONFIG.lineUrl;
+    $('#lineFooter').href = CONFIG.lineUrl;
+    $('#year').textContent = new Date().getFullYear();
+    $('#hoursHint').textContent = `เปิดรับ ${CONFIG.hours.replace('ทุกวัน ','')} · เมนูปรุงสด/ปลาเผา สั่งล่วงหน้า 1–2 ชม.`;
+    $('#freeDelText').textContent = `สั่งครบ ${fmt(CONFIG.freeDeliveryOver)} ส่งฟรีในโซนใกล้`;
+
+    // payment in contact card
+    if (CONFIG.promptpay){
+      $('#payLi').style.display = 'flex';
+      $('#payLiVal').textContent = CONFIG.promptpay + (CONFIG.promptpayName ? ` (${CONFIG.promptpayName})` : '');
+    }
+
+    // areas dropdown
+    const sel = $('#areaSelect');
+    CONFIG.areas.forEach((a,i) => {
+      const o = document.createElement('option');
+      o.value = i; o.textContent = `${a.name} (~${a.km} กม.)`;
+      sel.appendChild(o);
+    });
+    // zone dropdown in checkout
+    const cz = $('#coZone');
+    CONFIG.zones.forEach(z => {
+      const o = document.createElement('option');
+      const label = z.contact ? `${z.name} · ${z.range} · ติดต่อร้าน`
+        : `${z.name} · ${z.range} · ${z.fee===0?'ฟรี':CONFIG.currency+z.fee}`;
+      o.value = z.id; o.textContent = label;
+      cz.appendChild(o);
+    });
+
+    // SEO: canonical + og:url (เมื่อกำหนด siteUrl)
+    if (CONFIG.siteUrl){
+      const link = document.createElement('link'); link.rel='canonical'; link.href=CONFIG.siteUrl;
+      document.head.appendChild(link);
+      const ogu = document.querySelector('meta[property="og:url"]') || document.createElement('meta');
+      ogu.setAttribute('property','og:url'); ogu.setAttribute('content',CONFIG.siteUrl);
+      document.head.appendChild(ogu);
+    }
+    // SEO: LocalBusiness JSON-LD (ช่วยให้ Google เข้าใจว่าเป็นร้านอาหารในพื้นที่)
+    const ld = {
+      "@context":"https://schema.org","@type":"Restaurant",
+      "name":CONFIG.brand,"description":CONFIG.tagline,"telephone":CONFIG.phone,
+      "address":{"@type":"PostalAddress","streetAddress":CONFIG.address,"addressCountry":"TH"},
+      "geo":{"@type":"GeoCoordinates","latitude":CONFIG.shopLat,"longitude":CONFIG.shopLng},
+      "hasMap":CONFIG.mapUrl,"openingHours":"Mo-Su 08:00-18:00","servesCuisine":"Thai","priceRange":"฿฿"
+    };
+    const s = document.createElement('script'); s.type='application/ld+json';
+    s.textContent = JSON.stringify(ld); document.head.appendChild(s);
+  }
+
+  /* ---------- preflight: เตือนถ้ายังไม่ได้แก้ CONFIG ---------- */
+  function preflight(){
+    const bad = [];
+    if (/X/.test(CONFIG.phone))                          bad.push('เบอร์โทร');
+    if (/yourline/.test(CONFIG.lineId + CONFIG.lineUrl))  bad.push('LINE');
+    if (/____|xxx/.test(CONFIG.address))                 bad.push('ที่อยู่');
+    if (CONFIG.mapUrl === 'https://www.google.com/maps')  bad.push('พิกัดแผนที่');
+    if (CONFIG.shopLat === 14 && CONFIG.shopLng === 100)  bad.push('พิกัดฟาร์ม');
+    if (!bad.length) return;
+    console.warn('⚠️ ยังไม่ได้แก้ข้อมูลร้านใน CONFIG: ' + bad.join(', '));
+    const b = document.createElement('div');
+    b.className = 'setup-banner';
+    b.innerHTML = '⚠️ ยังไม่ได้ตั้งค่า: <b>' + bad.join(', ') + '</b> — แก้ที่ CONFIG ในไฟล์ก่อนเผยแพร่ (แตะเพื่อปิด)';
+    b.onclick = () => b.remove();
+    document.body.appendChild(b);
+  }
+
+  /* ---------- events ---------- */
+  function bind(){
+    // menu tabs
+    $('#tabs').addEventListener('click', e => {
+      const b = e.target.closest('.tab'); if(!b) return;
+      $$('.tab').forEach(t => { t.classList.remove('active'); t.setAttribute('aria-pressed','false'); });
+      b.classList.add('active'); b.setAttribute('aria-pressed','true');
+      state.category = b.dataset.cat; renderMenu();
+    });
+    // add to cart (delegate)
+    $('#menuGrid').addEventListener('click', e => {
+      const b = e.target.closest('[data-add]'); if(!b) return; add(b.dataset.add);
+    });
+    // cart qty (delegate)
+    $('#drawerBody').addEventListener('click', e => {
+      const inc_=e.target.closest('[data-inc]'), dec_=e.target.closest('[data-dec]'), rm_=e.target.closest('[data-rm]');
+      if(inc_) inc(inc_.dataset.inc);
+      else if(dec_) dec(dec_.dataset.dec);
+      else if(rm_) remove(rm_.dataset.rm);
+    });
+    // header cart
+    $('#openCart').addEventListener('click', openCart);
+    // mode segment
+    $('#modeSeg').addEventListener('click', e => {
+      const b = e.target.closest('[data-mode]'); if(!b) return;
+      $$('#modeSeg button').forEach(x => { x.classList.remove('active'); x.setAttribute('aria-pressed','false'); });
+      b.classList.add('active'); b.setAttribute('aria-pressed','true');
+      state.mode = b.dataset.mode;
+      $('#deliverFields').style.display = state.mode==='delivery' ? 'block' : 'none';
+      $('#addrField').style.display   = state.mode==='delivery' ? 'block' : 'none';
+      renderSummary();
+    });
+    // checkout zone select
+    $('#coZone').addEventListener('change', e => { state.zoneId = Number(e.target.value); renderSummary(); });
+    // re-check gating as the customer types
+    ['fName','fPhone','fAddr','fTime','fNote'].forEach(id => $('#'+id).addEventListener('input', renderSummary));
+
+    // zone checker: area select
+    $('#areaSelect').addEventListener('change', e => {
+      if(e.target.value==='') { $('#zoneResult').classList.remove('show'); return; }
+      const a = CONFIG.areas[Number(e.target.value)];
+      showZoneResult(a.km, zoneForKm(a.km));
+    });
+    // zone checker: geolocation
+    $('#geoBtn').addEventListener('click', () => {
+      if(!navigator.geolocation){ toast('อุปกรณ์ไม่รองรับการหาตำแหน่ง'); return; }
+      const btn = $('#geoBtn'); const old = btn.textContent; btn.textContent='⏳ กำลังหาตำแหน่ง...'; btn.disabled=true;
+      navigator.geolocation.getCurrentPosition(
+        pos => {
+          const km = haversine(CONFIG.shopLat, CONFIG.shopLng, pos.coords.latitude, pos.coords.longitude);
+          showZoneResult(km, zoneForKm(km));
+          btn.textContent=old; btn.disabled=false;
+        },
+        () => { toast('ขออนุญาตตำแหน่งไม่สำเร็จ ลองเลือกพื้นที่จากรายการแทน'); btn.textContent=old; btn.disabled=false; },
+        { enableHighAccuracy:true, timeout:10000 }
+      );
+    });
+    // use this zone -> open cart with delivery + zone
+    $('#useZoneBtn').addEventListener('click', () => {
+      const zid = Number($('#zoneResult').dataset.zone);
+      state.mode = 'delivery'; state.zoneId = zid;
+      $$('#modeSeg button').forEach(x => {
+        const on = x.dataset.mode==='delivery';
+        x.classList.toggle('active', on); x.setAttribute('aria-pressed', on);
+      });
+      $('#coZone').value = zid;
+      $('#deliverFields').style.display='block'; $('#addrField').style.display='block';
+      openCart(); renderSummary();
+      if(!cartCount()) toast('เลือกโซนแล้ว — เลือกเมนูใส่ตะกร้าได้เลย 🐟');
+    });
+
+    // order: open LINE synchronously (รักษา user-gesture ไม่ให้ป็อปอัปโดนบล็อก) แล้วคัดลอกข้อความ
+    $('#lineOrderBtn').addEventListener('click', () => {
+      if($('#lineOrderBtn').disabled) return;
+      const url = lineOrderURL();
+      const win = window.open(url, '_blank');
+      copyText(orderText()).then(ok => {
+        if(!win){
+          toast('เปิด LINE ไม่สำเร็จ — คัดลอกออเดอร์ไว้ให้แล้ว วางในแชท LINE ร้านได้เลย');
+          location.href = url;   // fallback: เปิดในแท็บเดิม
+          return;
+        }
+        toast(ok ? 'คัดลอกออเดอร์แล้ว ✅ วางในแชท LINE แล้วกดส่ง — ร้านจะทักยืนยันกลับ'
+                 : 'เปิด LINE แล้ว วางออเดอร์ในแชทได้เลย');
+      });
+    });
+    $('#copyOrderBtn').addEventListener('click', async () => {
+      if($('#copyOrderBtn').disabled) return;
+      const ok = await copyText(orderText());
+      toast(ok ? 'คัดลอกออเดอร์แล้ว 📋 วางในแชท LINE หรือส่งให้ร้านได้เลย' : 'คัดลอกไม่สำเร็จ ลองใหม่อีกครั้ง');
+    });
+
+    // mobile nav
+    $('#menuToggle').addEventListener('click', () => {
+      const open = $('#navLinks').classList.toggle('open');
+      $('#menuToggle').setAttribute('aria-expanded', open);
+    });
+    $$('#navLinks a').forEach(a => a.addEventListener('click', () => {
+      $('#navLinks').classList.remove('open');
+      $('#menuToggle').setAttribute('aria-expanded','false');
+    }));
+
+    // esc closes drawer
+    document.addEventListener('keydown', e => { if(e.key==='Escape') closeCart(); });
+  }
+
+  function init(){
+    applyConfig();
+    renderMenu();
+    state.zoneId = CONFIG.zones[0].id;         // default checkout zone
+    $('#coZone').value = state.zoneId;
+    loadCart();
+    renderCart();
+    bind();
+    preflight();
+  }
+
+  return { init, openCart, closeCart, add };
+})();
+
+document.addEventListener('DOMContentLoaded', Shop.init);
+</script>
+</body>
+</html>
