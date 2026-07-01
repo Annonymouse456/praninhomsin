@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>ปลานิลหอมสิน · สดจากบ่อ ส่งตรงถึงครัว</title>
+<title>ปลานิลหอมศีล · ส่งตรงจากบ่อถึงบ้านคุณ</title>
 <meta name="description" content="ปลานิลสดจากบ่อ พร้อมเมนูแปรรูป ปลาเผา ปลาทอด ปลาราดพริก บั้งพร้อมทอด บริการส่งถึงบ้านและรับเองที่ฟาร์ม เลือกพื้นที่เพื่อดูค่าส่งและระยะเวลาได้ทันที" />
 
 <!-- ไอคอนแท็บ (favicon) — ใช้โลโก้ปลาในตัว ไม่ต้องมีไฟล์เพิ่ม -->
@@ -14,14 +14,14 @@
 <!-- การ์ดพรีวิวตอนแชร์ลิงก์ใน LINE/Facebook — แก้ 2 URL ด้านล่างให้เป็นของร้านจริง (รูปแนวนอน 1200x630 .jpg ที่อัปโหลดออนไลน์แล้ว) -->
 <meta property="og:type" content="website" />
 <meta property="og:locale" content="th_TH" />
-<meta property="og:site_name" content="ปลานิลหอมสิน" />
-<meta property="og:title" content="ปลานิลหอมสิน · สดจากบ่อ ส่งตรงถึงครัว" />
+<meta property="og:site_name" content="ปลานิลหอมศีล" />
+<meta property="og:title" content="ปลานิลหอมศีล · ส่งตรงจากบ่อถึงบ้านคุณ" />
 <meta property="og:description" content="ปลานิลสดจากบ่อ พร้อมเมนูแปรรูป ปลาเผา ปลาทอด ปลาราดพริก ส่งถึงบ้านหรือรับที่ฟาร์ม" />
 <meta property="og:image" content="https://annonymouse456.github.io/praninhomsin/images/og-cover.jpg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="ปลานิลหอมสิน · สดจากบ่อ ส่งตรงถึงครัว" />
+<meta name="twitter:title" content="ปลานิลหอมศีล · ส่งตรงจากบ่อถึงบ้านคุณ" />
 <meta name="twitter:description" content="ปลานิลสดจากบ่อ พร้อมเมนูแปรรูป ส่งถึงบ้านหรือรับที่ฟาร์ม" />
 <meta name="twitter:image" content="https://annonymouse456.github.io/praninhomsin/images/og-cover.jpg" />
 
@@ -30,7 +30,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@500;600;700&family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 /* ============================================================
-   ปลานิลหอมสิน — ร้านขายปลานิลสด + แปรรูป (ไฟล์เดียวจบ)
+   ปลานิลหอมศีล — ร้านขายปลานิลสด + แปรรูป (ไฟล์เดียวจบ)
    แก้ข้อมูลร้านได้ที่ตัวแปร CONFIG ในส่วน <script> ด้านล่างสุด
    ============================================================ */
 :root{
@@ -93,7 +93,7 @@ button{font-family:inherit;cursor:pointer}
   backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .nav{height:var(--header-h);display:flex;align-items:center;justify-content:space-between;gap:16px}
 .brand{display:flex;align-items:center;gap:10px;font-family:'Kanit';font-weight:700;font-size:1.18rem;color:var(--green-d)}
-.brand .logo{width:40px;height:40px;flex:0 0 auto}
+.brand .logo{width:40px;height:40px;flex:0 0 auto;border-radius:50%;object-fit:cover;background:#fff}
 .nav-links{display:flex;gap:26px;align-items:center}
 .nav-links a{font-weight:500;color:var(--ink);font-size:.97rem;position:relative}
 .nav-links a:hover{color:var(--green)}
@@ -387,14 +387,8 @@ select:focus,input:focus,textarea:focus{outline:none;border-color:var(--green);b
 <header class="header">
   <div class="container nav">
     <a href="#top" class="brand">
-      <svg class="logo" viewBox="0 0 64 64" aria-hidden="true">
-        <circle cx="32" cy="32" r="32" fill="#1f7a5a"/>
-        <path d="M14 34c8-11 22-14 30-8 3 2 6 5 6 5s-3 3-6 5c-8 6-22 3-30-7z" fill="#fbf6ec"/>
-        <path d="M50 26l8-6-2 11 2 11-8-6z" fill="#f2b705"/>
-        <circle cx="24" cy="30" r="2.6" fill="#22312c"/>
-        <path d="M30 34c4 2 9 2 13 0" stroke="#1f7a5a" stroke-width="2" fill="none" stroke-linecap="round"/>
-      </svg>
-      <span data-config="brand">ปลานิลหอมสิน</span>
+      <img class="logo" src="images/logo.png" alt="โลโก้ ปลานิลหอมศีล" width="40" height="40" />
+      <span data-config="brand">ปลานิลหอมศีล</span>
     </a>
     <nav class="nav-links" id="navLinks">
       <a href="#menu">เมนู</a>
@@ -420,7 +414,7 @@ select:focus,input:focus,textarea:focus{outline:none;border-color:var(--green);b
   <div class="container hero-grid">
     <div class="hero-left">
       <span class="eyebrow">🐟 สดจากบ่อทุกวัน · เลี้ยงเอง ส่งเอง</span>
-      <h1>ปลานิล<span class="hl">สดๆ</span><br>ส่งตรงจากบ่อ<br>ถึงครัวคุณ</h1>
+      <h1>ปลานิล<span class="hl">สดๆ</span><br>ส่งตรงจากบ่อ<br>ถึงบ้านคุณ</h1>
       <p class="lead">เลือกได้ทั้งปลาสดพร้อมปรุง หรือเมนูปรุงสดร้อนๆ — ปลาเผา ปลาทอด ปลาราดพริก บั้งพร้อมทอด
         เนื้อแน่น ไม่มีกลิ่นโคลน สั่งง่าย รับเองที่ฟาร์มหรือส่งถึงบ้าน</p>
       <div class="hero-cta">
@@ -673,12 +667,8 @@ select:focus,input:focus,textarea:focus{outline:none;border-color:var(--green);b
     <div class="footer-grid">
       <div>
         <div class="brand" style="margin-bottom:10px">
-          <svg class="logo" viewBox="0 0 64 64" width="34" height="34" aria-hidden="true">
-            <circle cx="32" cy="32" r="32" fill="#1f7a5a"/>
-            <path d="M14 34c8-11 22-14 30-8 3 2 6 5 6 5s-3 3-6 5c-8 6-22 3-30-7z" fill="#fbf6ec"/>
-            <path d="M50 26l8-6-2 11 2 11-8-6z" fill="#f2b705"/><circle cx="24" cy="30" r="2.6" fill="#22312c"/>
-          </svg>
-          <span data-config="brand">ปลานิลหอมสิน</span>
+          <img class="logo" src="images/logo.png" alt="" width="34" height="34" />
+          <span data-config="brand">ปลานิลหอมศีล</span>
         </div>
         <p style="color:#a9bab2;font-size:.92rem;max-width:280px">ปลานิลสดจากบ่อ เลี้ยงเอง แปรรูปเอง ส่งตรงถึงครัวคุณ ในราคายุติธรรมจากคนเลี้ยงจริง</p>
       </div>
@@ -696,7 +686,7 @@ select:focus,input:focus,textarea:focus{outline:none;border-color:var(--green);b
         <a href="#contact" data-config="hours">ทุกวัน 8:00–18:00 น.</a>
       </div>
     </div>
-    <div class="copy">© <span id="year">2026</span> <span data-config="brand">ปลานิลหอมสิน</span> · ทำด้วยใจจากคนเลี้ยงปลา 🐟</div>
+    <div class="copy">© <span id="year">2026</span> <span data-config="brand">ปลานิลหอมศีล</span> · ทำด้วยใจจากคนเลี้ยงปลา 🐟</div>
   </div>
 </footer>
 
@@ -766,8 +756,8 @@ select:focus,input:focus,textarea:focus{outline:none;border-color:var(--green);b
    (ถ้ายังไม่แก้ จะมีแถบสีแดงเตือนด้านล่างจอ)
    ============================================================ */
 const CONFIG = {
-  brand:      "ปลานิลหอมสิน",
-  tagline:    "สดจากบ่อ ส่งตรงถึงครัวคุณ",
+  brand:      "ปลานิลหอมศีล",
+  tagline:    "ส่งตรงจากบ่อถึงบ้านคุณ",
   currency:   "฿",
   phone:      "095-919-4782",              // เบอร์โทรร้าน
 
@@ -830,15 +820,15 @@ const MENU = [
   // { id:"f0", category:"fresh", type:"fresh", emoji:"🐟", img:"images/pla-phao.jpg", name:"ปลานิลเผา", desc:"...", price:160, unit:"ตัว", badge:"" },
   { id:"f1", category:"fresh", type:"fresh", emoji:"🐟", img:"images/pla-sod.jpg", name:"ปลานิลสดทั้งตัว", desc:"ขอดเกล็ด ควักไส้ ทำสะอาด พร้อมปรุง", price:85,  unit:"กก.", badge:"ขายดี" },
   { id:"f2", category:"fresh", type:"fresh", emoji:"🍤", img:"images/pla-bung.jpg", name:"ปลานิลบั้งพร้อมทอด", desc:"กรีดข้างตัว (บั้ง) มาให้เรียบร้อย ลงกระทะทอดได้เลย ไม่ต้องเตรียมเอง", price:95,  unit:"กก.", badge:"สะดวก" },
-  { id:"f3", category:"fresh", type:"fresh", emoji:"🍣", name:"เนื้อปลานิลแล่ (เลาะก้างใหญ่ออก)", desc:"แล่เป็นชิ้น เลาะก้างออกให้แล้ว ทำเมนูอะไรก็สะดวก", price:150, unit:"แพ็ก 500ก.", badge:"" },
-  { id:"f4", category:"fresh", type:"fresh", emoji:"🌤️", name:"ปลานิลแดดเดียว", desc:"หมักสูตรเด็ด ตากแดดเดียว ทอดหอมกรอบ", price:180, unit:"แพ็ก 2 ตัว", badge:"" },
+  { id:"f3", category:"fresh", type:"fresh", emoji:"🍣", img:"images/pla-lae.jpg", name:"เนื้อปลานิลแล่ (เลาะก้างใหญ่ออก)", desc:"แล่เป็นชิ้น เลาะก้างออกให้แล้ว ทำเมนูอะไรก็สะดวก", price:150, unit:"แพ็ก 500ก.", badge:"" },
+  { id:"f4", category:"fresh", type:"fresh", emoji:"🌤️", img:"images/pla-daddiao.jpg", name:"ปลานิลแดดเดียว", desc:"หมักสูตรเด็ด ตากแดดเดียว ทอดหอมกรอบ", price:180, unit:"แพ็ก 2 ตัว", badge:"" },
 
   { id:"c1", category:"cook", type:"cook", emoji:"🔥", img:"images/pla-phao.jpg", name:"ปลานิลเผาเกลือ", desc:"เตาถ่านแท้ พอกเกลือ หอม เนื้อฉ่ำ (~800ก.-1กก.)", price:160, unit:"ตัว", badge:"เตาถ่าน" },
   { id:"c2", category:"cook", type:"cook", emoji:"🍳", img:"images/pla-thod.jpg", name:"ปลานิลทอดน้ำปลา", desc:"ทอดกรอบนอกนุ่มใน ราดน้ำปลาหวาน", price:150, unit:"ตัว", badge:"" },
   { id:"c3", category:"cook", type:"cook", emoji:"🌶️", img:"images/pla-radprik.jpg", name:"ปลานิลราดพริกสามรส", desc:"ทอดกรอบราดซอสสามรส เปรี้ยว หวาน เผ็ด", price:220, unit:"ตัว", badge:"รสเด็ด" },
-  { id:"c4", category:"cook", type:"cook", emoji:"🧄", name:"ปลานิลทอดกระเทียม", desc:"ทอดกระเทียมพริกไทยหอมๆ กินกับข้าวสวย", price:160, unit:"ตัว", badge:"" },
-  { id:"c5", category:"cook", type:"cook", emoji:"🍲", name:"ฉู่ฉี่ปลานิล", desc:"ราดพริกแกงฉู่ฉี่เข้มข้น หอมกะทิ", price:180, unit:"ถุง", badge:"" },
-  { id:"c6", category:"cook", type:"cook", emoji:"🥘", name:"ต้มยำปลานิลน้ำข้น", desc:"แซ่บร้อนๆ สมุนไพรเต็มหม้อ", price:160, unit:"ถุง", badge:"" },
+  { id:"c4", category:"cook", type:"cook", emoji:"🧄", img:"images/pla-kratiam.jpg", name:"ปลานิลทอดกระเทียม", desc:"ทอดกระเทียมพริกไทยหอมๆ กินกับข้าวสวย", price:160, unit:"ตัว", badge:"" },
+  { id:"c5", category:"cook", type:"cook", emoji:"🍲", img:"images/pla-chuchi.jpg", name:"ฉู่ฉี่ปลานิล", desc:"ราดพริกแกงฉู่ฉี่เข้มข้น หอมกะทิ", price:180, unit:"ถุง", badge:"" },
+  { id:"c6", category:"cook", type:"cook", emoji:"🥘", img:"images/pla-tomyum.jpg", name:"ต้มยำปลานิลน้ำข้น", desc:"แซ่บร้อนๆ สมุนไพรเต็มหม้อ", price:160, unit:"ถุง", badge:"" },
 
   { id:"s1", category:"set", type:"cook", emoji:"👨‍👩‍👧", name:"เซ็ตครอบครัว", desc:"ปลาเผา 1 + ทอดน้ำปลา 1 + น้ำจิ้ม 2 (อิ่ม 3–4 คน)", price:320, unit:"เซ็ต", badge:"คุ้ม" },
   { id:"s2", category:"set", type:"cook", emoji:"🎉", name:"เซ็ตปาร์ตี้", desc:"ปลา 4 เมนู + ผักสด + น้ำจิ้ม (อิ่ม 6–8 คน)", price:590, unit:"เซ็ต", badge:"ปาร์ตี้" },
